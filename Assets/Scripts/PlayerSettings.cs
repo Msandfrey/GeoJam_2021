@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerSettings : MonoBehaviour
 {
     private const string PlayerPrefKeyVolume = "Volume";
-    private const float DefaultVolume = 1.0f;
+    private const float DefaultVolume = 0.5f;
 
     [SerializeField]
     [Tooltip("For debug purposes only. Set to true to force all player settings to get cleared each time the script loads.")]

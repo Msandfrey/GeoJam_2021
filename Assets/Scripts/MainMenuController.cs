@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     public Slider volumeSlider;
+    public AudioManager audioManager;
 
     private PlayerSettings playerSettings;
     private SceneChangeManager sceneChangeManager;
@@ -20,13 +21,17 @@ public class MainMenuController : MonoBehaviour
         playerSettings = GetComponent<PlayerSettings>();
         sceneChangeManager = GetComponent<SceneChangeManager>();
 
-        volumeSlider.value = playerSettings.GetVolume();
+        float volume = playerSettings.GetVolume();
+        volumeSlider.value = volume;
         volumeSlider.onValueChanged.AddListener(HandleVolumeSliderValueChanged);
+
+        audioManager.SetVolume(volume);
+        audioManager.PlayMainMenuMusic();
     }
 
     private void HandleVolumeSliderValueChanged(float value)
     {
-        // TODO: Update AudioManager volume as wel
+        audioManager.SetVolume(value);
         playerSettings.SaveVolume(value);
     }
 }
