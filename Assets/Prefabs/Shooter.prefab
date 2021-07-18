@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 8778293214402286544}
   - component: {fileID: 8067849730298449975}
   - component: {fileID: 4628001671320448541}
-  - component: {fileID: 2254098659813790741}
   - component: {fileID: 3001508620149043253}
   m_Layer: 0
   m_Name: Shooter
@@ -228,18 +227,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &2254098659813790741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557143087885883282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26995c90b03e474ea948a4bc5a888da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3001508620149043253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,3 +239,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a17b4c19a0f8e8458552b3ddad4f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrust: 20
