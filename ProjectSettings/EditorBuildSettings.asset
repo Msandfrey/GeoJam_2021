@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenuScreen.unity
     guid: 944153e4971f84a3dab22954f20565e5
+  - enabled: 1
+    path: Assets/Scenes/Matt.unity
+    guid: c7e095586891395439b5dabb608b86d9
+  - enabled: 1
+    path: Assets/Scenes/Matt 1.unity
+    guid: e5c936ef17e427e40af672554bb73eaa
+  - enabled: 1
+    path: Assets/Scenes/Matt 2.unity
+    guid: 5842507e7d3089a4c808a5da5a08565b
   m_configObjects: {}
