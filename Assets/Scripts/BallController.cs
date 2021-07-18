@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
+    //Matt-------------------------
+    //LevelManager LM;
+    //Matt-------------------------
     private Rigidbody rbBall;
     public float thrust = 20f;
 
     void Start()
     {
+        //Matt-------------------------
+        //LM = FindObjectOfType<LevelManager>();
+        //Matt-------------------------
         rbBall = GetComponent<Rigidbody>();
     }
 
@@ -41,6 +47,9 @@ public class BallController : MonoBehaviour
         if(col.gameObject.name.Contains("Block"))
         {
             Destroy(col.gameObject);
+            //Matt-------------------------
+            //LM.RemoveBlock();
+            //Matt-------------------------
         }
     }
 
