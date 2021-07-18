@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public int score;
-    public int ballCount;
-    public int blocksLeft;
-    public bool win = false;
+    int score;
+    [SerializeField]
+    int ballCount = 5;
+    int blocksLeft;
+    bool win = false;
 
+    //temp stuff for now
     public Text tempScoreUI;
     public Text tempBallUI;
     public GameObject tempLoseScreenUI;
