@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     int score;
+    float timer;
     [SerializeField]
     int ballCount = 5;
     int blocksLeft;
     bool win = false;
     bool peg = true;
+    bool timerActive = false;
 
     SceneChangeManager SM;
     [SerializeField]
@@ -56,15 +58,26 @@ public class LevelManager : MonoBehaviour
             breakoutBar.SetActive(true);
         }
     }
+
     public void RemoveBlock()//take in block type/points value
     {
         blocksLeft--;
-        //update the hitstreak here; have timer for clearing?
-        //call function to set score with block type as parameter
-        int bonus = CalcHitBonus(1);//get the hitstreak here
-        AddScore(1,bonus);
+        timerActive = true;
+        if (timerActive) 
+        {
+            timer += Time.deltaTime; // start timer to measure time lapse of subsequent block hits
+            int hitStreak = CalcHitStreak(timer); // based on time, it's either 1, 2, 3
+            int bonus = CalcHitBonus(hitStreak);// based on hitstreak, it's either, 10, 5, 1
+            Debug.Log("Time: " + timer);
+            Debug.Log("Hit streak: " + hitStreak);
+            Debug.Log("Bonus: " + bonus);
+
+            AddScore(1,bonus);
+        }
+        
         if(blocksLeft <= 0)
         {
+            timerActive = false;
             Win();
         }
     }
@@ -97,13 +110,36 @@ public class LevelManager : MonoBehaviour
         score += blockPoints*bonusMultiplier;
         tempScoreUI.text = score.ToString();
     }
+
+    int CalcHitStreak(float time)
+    {
+        // determine if  hitStreak is high (a.k.a 1), mid (a.k.a. 2), or low (a.k.a 3)
+        // depending on time lapse (in sec)
+        int hitStreak = 0;
+        if (time <= 3.0f)
+        {   
+            hitStreak = 1;
+        }
+        else if (time <= 5.0f && time >= 3f) 
+        {
+            hitStreak = 2;
+        }
+        else if (time >= 10.0f) 
+        {
+            hitStreak = 3;
+        }
+        return hitStreak;
+    }
+
     int CalcHitBonus(int hitStreak)
     {
-        //if in range 1
-        //if in range 2
-        //if in range 3
-        //return bonus for each
-        return 1;
+        switch (hitStreak)
+        {
+            default:
+            case 1: return 10;
+            case 2: return 5; 
+            case 3: return 1; 
+        }
     }
     public void Win()
     {

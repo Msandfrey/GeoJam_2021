@@ -28,7 +28,6 @@ public class BallController : MonoBehaviour
             ballIsActive = true;
             Shoot();
         }
-        // ballIsActive = false once it falls out of scene.
     }   
     public void ResetLauncher()
     {
