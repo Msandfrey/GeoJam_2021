@@ -10,10 +10,13 @@ public class LevelManager : MonoBehaviour
     int ballCount = 5;
     int blocksLeft;
     bool win = false;
+    bool peg = true;
 
     SceneChangeManager SM;
     [SerializeField]
     BallController Launcher;
+    [SerializeField]
+    GameObject breakoutBar;
 
     //temp stuff for now
     public Text tempScoreUI;
@@ -39,16 +42,28 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
     }
-    public void ActivateSwitch()
+    public void ActivateSwitch()//for now it just does this simple thing
     {
-        //when the switch is hit call this function
-        //will add more to this after we know what it does
+        peg = !peg;
+        //if peg show launcher hide bar
+        if (peg)
+        {
+            Launcher.gameObject.SetActive(true);
+            breakoutBar.SetActive(false);
+        }
+        else//else hide launcher show bar
+        {
+            Launcher.gameObject.SetActive(false);
+            breakoutBar.SetActive(true);
+        }
     }
-    public void RemoveBlock()//take in block type
+    public void RemoveBlock()//take in block type/points value
     {
         blocksLeft--;
+        //update the hitstreak here; have timer for clearing?
         //call function to set score with block type as parameter
-        AddScore();
+        int bonus = CalcHitBonus(1);//get the hitstreak here
+        AddScore(1,bonus);
         if(blocksLeft <= 0)
         {
             Win();
@@ -58,8 +73,9 @@ public class LevelManager : MonoBehaviour
     {
         //destroy the ball
         Destroy(ball);
+        if (win) { return; }
         //update the ball count
-        ballCount--;
+        ballCount--;//ball count should be lowered at firing?
         tempBallUI.text = ballCount.ToString();
         //check if they lost
         if(ballCount < 0 && !win)
@@ -67,19 +83,32 @@ public class LevelManager : MonoBehaviour
             Lose();
             return;
         }
+        if (!peg)
+        {
+            ActivateSwitch();
+        }
         //reset the launcher
         Launcher.ResetLauncher();
     }
-    void AddScore()//add paramtere later
+    void AddScore(int blockPoints, int bonusMultiplier)//add paramtere later
     {
         //calculate score based on block type, later with combo shtuff
-        score++;
+        score += blockPoints*bonusMultiplier;
         tempScoreUI.text = score.ToString();
+    }
+    int CalcHitBonus(int hitStreak)
+    {
+        //if in range 1
+        //if in range 2
+        //if in range 3
+        //return bonus for each
+        return 1;
     }
     public void Win()
     {
         //show win screen
         tempWinScreenUI.SetActive(true);
+        win = true;
         //show options after win
         //main menu?
         //continue?

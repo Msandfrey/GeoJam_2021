@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabBall: {fileID: 3290766299175084929, guid: b1393992c70a93d438be057ab87ff4b6, type: 3}
   shootingPoint: {fileID: 7034291553791832535}
-  thrust: 200
+  thrust: 50
   ballIsActive: 0
 --- !u!1 &4437510530693163955
 GameObject:
