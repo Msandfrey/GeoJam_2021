@@ -17,6 +17,6 @@ public class BallLauncher : MonoBehaviour
     {
         launcherAngle += Input.GetAxis("Mouse X") * launchRotationSpeed * -Time.deltaTime;
         launcherAngle = Mathf.Clamp(launcherAngle, -90, 90);
-        launcher.localRotation = Quaternion.Euler(launcherAngle, -90, 90);
+        launcher.localRotation = Quaternion.Euler(launcherAngle, 90, -90); // if launcher is pointing down
     }
 }
