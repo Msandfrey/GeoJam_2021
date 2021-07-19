@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Switcheroo : MonoBehaviour
 {
-    LevelManager LM;
+    LevelManager levelManager;
     // Start is called before the first frame update
     void Start()
     {
-        LM = FindObjectOfType<LevelManager>();
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class Switcheroo : MonoBehaviour
         if (collision.gameObject.tag.Equals("Ball"))
         {
             collision.gameObject.GetComponent<Rigidbody>().useGravity = false;//need to change it so that all balls have no gravity?
-            LM.ActivateSwitch();
+            levelManager.ActivateSwitch();
             gameObject.SetActive(false);
         }
     }

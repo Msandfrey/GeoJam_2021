@@ -5,10 +5,10 @@ using UnityEngine;
 public class BallCatcher : MonoBehaviour
 {
     [SerializeField]
-    private LevelManager LM;
+    private LevelManager levelManager;
 
     private void OnTriggerEnter(Collider collision)
     {
-        LM.BallFalls(collision.gameObject);
+        levelManager.BallFalls(collision.gameObject);
     }
 }

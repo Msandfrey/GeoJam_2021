@@ -1192,6 +1192,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3980701572753811140, guid: 25590822d4c480b4e92341cf5835bf35, type: 3}
   m_PrefabInstance: {fileID: 1238400128}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1638619885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1724374501956118020, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
+  m_PrefabInstance: {fileID: 845328852192096128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1680815590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1858,6 +1863,10 @@ PrefabInstance:
       propertyPath: breakoutBar
       value: 
       objectReference: {fileID: 911648670}
+    - target: {fileID: 845328851749496883, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
+      propertyPath: tempOwlThing
+      value: 
+      objectReference: {fileID: 1638619885}
     - target: {fileID: 845328851749496883, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
       propertyPath: tempRespawnPoint
       value: 

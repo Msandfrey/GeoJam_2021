@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    LevelManager LM;
+    LevelManager levelManager;
     Rigidbody rb;
     float constantSpeed;
 
     private void Start()
     {
-        LM = FindObjectOfType<LevelManager>();
+        levelManager = FindObjectOfType<LevelManager>();
         rb = GetComponent<Rigidbody>();
     }
     private void Update()
@@ -29,7 +29,7 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.tag.Equals("Block"))
         {
             Destroy(collision.gameObject);
-            LM.RemoveBlock();
+            levelManager.RemoveBlock();
         }
     }
 }

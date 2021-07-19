@@ -11,14 +11,17 @@ public class LevelManager : MonoBehaviour
     int blocksLeft;
     bool win = false;
     bool peg = true;
+    [SerializeField]
+    float switchLagTime = .2f;
 
-    SceneChangeManager SM;
+    SceneChangeManager sceneManager;
     [SerializeField]
     BallController Launcher;
     [SerializeField]
     GameObject breakoutBar;
 
     //temp stuff for now
+    public GameObject tempOwlThing;
     public Text tempScoreUI;
     public Text tempBallUI;
     public GameObject tempLoseScreenUI;
@@ -33,7 +36,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SM = FindObjectOfType<SceneChangeManager>();
+        sceneManager = FindObjectOfType<SceneChangeManager>();
         tempBallUI.text = ballCount.ToString();   
     }
 
@@ -52,9 +55,22 @@ public class LevelManager : MonoBehaviour
         }
         else//else hide launcher show bar
         {
+            //slow down time
+            Time.timeScale = .1f;
+            //show owl
+            tempOwlThing.SetActive(true);
+            //coroutine for increase size and wait x secs
+            StartCoroutine(InitiateSwitchToTheOtherSide());
             Launcher.gameObject.SetActive(false);
             breakoutBar.SetActive(true);
         }
+    }
+    public IEnumerator InitiateSwitchToTheOtherSide()
+    {
+        //give players a couple moments to realize the mode is changing
+        yield return new WaitForSeconds(switchLagTime);
+        Time.timeScale = 1;
+        tempOwlThing.SetActive(false);
     }
     public void RemoveBlock()//take in block type/points value
     {
@@ -117,7 +133,7 @@ public class LevelManager : MonoBehaviour
     }
     public void Continue()
     {
-        SM.SwitchScene();
+        sceneManager.SwitchScene();
     }
     public void Lose()
     {
@@ -130,6 +146,6 @@ public class LevelManager : MonoBehaviour
     }
     public void Restart()
     {
-        SM.RestartScene();
+        sceneManager.RestartScene();
     }
 }
