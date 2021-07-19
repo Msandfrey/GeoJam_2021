@@ -12,6 +12,6 @@ public class GameCompletedController : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        sceneChangeManager.SwitchScene("MainMenuScreen");
+        sceneChangeManager.SwitchScene(SceneChangeManager.MAIN_MENU_SCENE);
     }
 }

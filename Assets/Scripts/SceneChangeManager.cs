@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneChangeManager : MonoBehaviour
 {
+    public const string MAIN_MENU_SCENE = "MainMenuScreen";
+
     private void Awake()
     {
         //check to make sure there is only one of these bad boys in play
