@@ -86,11 +86,11 @@ public class LevelManager : MonoBehaviour
             Debug.Log("Bonus: " + bonus);
 
             AddScore(1,bonus);
+            timerActive = false;
         }
 
         if(blocksLeft <= 0)
         {
-            timerActive = false;
             Win();
         }
     }
