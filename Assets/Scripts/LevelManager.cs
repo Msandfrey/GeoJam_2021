@@ -68,14 +68,16 @@ public class LevelManager : MonoBehaviour
             Win();
         }
     }
+    public void BallDecrement()
+    {
+        ballCount--;
+        tempBallUI.text = ballCount.ToString();
+    }
     public void BallFalls(GameObject ball)
     {
         //destroy the ball
         Destroy(ball);
         if (win) { return; }
-        //update the ball count
-        ballCount--;//ball count should be lowered at firing?
-        tempBallUI.text = ballCount.ToString();
         //check if they lost
         if(ballCount < 0 && !win)
         {

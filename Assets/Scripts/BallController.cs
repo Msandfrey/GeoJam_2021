@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     //Matt-------------------------
-    //LevelManager LM;
+    LevelManager levelManager;
     //Matt-------------------------
 
     public GameObject prefabBall;
@@ -17,7 +17,7 @@ public class BallController : MonoBehaviour
     void Start()
     {
         //Matt-------------------------
-        //LM = FindObjectOfType<LevelManager>();
+        levelManager = FindObjectOfType<LevelManager>();
         //Matt-------------------------
     }
 
@@ -36,6 +36,7 @@ public class BallController : MonoBehaviour
     }
     void Shoot()
     {
+        levelManager.BallDecrement();
         GameObject createBall = Instantiate(prefabBall, shootingPoint.position, shootingPoint.rotation);
         rbBall = createBall.GetComponent<Rigidbody>();
 
