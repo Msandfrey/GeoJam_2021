@@ -20,7 +20,7 @@ public class TimedSceneRedirect : MonoBehaviour
 
     private void LoadScene()
     {
-        SceneManager.LoadScene("MainMenuScreen");
+        SceneManager.LoadScene(SceneChangeManager.MAIN_MENU_SCENE);
     }
 
 }
