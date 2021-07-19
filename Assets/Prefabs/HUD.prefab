@@ -3190,8 +3190,8 @@ MonoBehaviour:
   ballCountText: {fileID: 7896378154153039531}
   scoreText: {fileID: 7896378154516032009}
   levelOverPanel: {fileID: 6971891685874511037}
-  levelOverResultText: {fileID: 0}
-  levelOverScoreText: {fileID: 0}
+  levelOverResultText: {fileID: 4351505353945171916}
+  levelOverScoreText: {fileID: 442344257024411882}
   menuPanel: {fileID: 4187713663078434680}
 --- !u!114 &6415224926722859836
 MonoBehaviour:
@@ -3804,7 +3804,7 @@ GameObject:
   - component: {fileID: 5609265532672781438}
   - component: {fileID: 4351505353945171916}
   m_Layer: 5
-  m_Name: TitleText
+  m_Name: LevelOverResultText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
