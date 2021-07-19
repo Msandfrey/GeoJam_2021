@@ -11,6 +11,10 @@ public class LevelManager : MonoBehaviour
     int blocksLeft;
     bool win = false;
 
+    SceneChangeManager SM;
+    [SerializeField]
+    BallController Launcher;
+
     //temp stuff for now
     public Text tempScoreUI;
     public Text tempBallUI;
@@ -27,6 +31,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SM = FindObjectOfType<SceneChangeManager>();
         tempBallUI.text = ballCount.ToString();   
     }
 
@@ -34,7 +39,11 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
     }
-
+    public void ActivateSwitch()
+    {
+        //when the switch is hit call this function
+        //will add more to this after we know what it does
+    }
     public void RemoveBlock()//take in block type
     {
         blocksLeft--;
@@ -45,25 +54,21 @@ public class LevelManager : MonoBehaviour
             Win();
         }
     }
-
     public void BallFalls(GameObject ball)
     {
-        //Destroy(ball);
+        //destroy the ball
+        Destroy(ball);
+        //update the ball count
         ballCount--;
         tempBallUI.text = ballCount.ToString();
-        if(ballCount < 0)
+        //check if they lost
+        if(ballCount < 0 && !win)
         {
-            Destroy(ball);
-            if (!win)
-            {
-                Lose();
-            }
+            Lose();
             return;
         }
-        //for now don't destroy the ball, just put it back at the top
-        ball.transform.position = tempRespawnPoint.transform.position;
-        ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        ball.GetComponent<Rigidbody>().useGravity = false;
+        //reset the launcher
+        Launcher.ResetLauncher();
     }
     void AddScore()//add paramtere later
     {
@@ -80,6 +85,10 @@ public class LevelManager : MonoBehaviour
         //continue?
             //initiate the next level
     }
+    public void Continue()
+    {
+        SM.SwitchScene();
+    }
     public void Lose()
     {
         //show lose screen
@@ -88,5 +97,9 @@ public class LevelManager : MonoBehaviour
         //restart?
         //main menu?
         //other?
+    }
+    public void Restart()
+    {
+        SM.RestartScene();
     }
 }

@@ -14,6 +14,7 @@ public class SceneChangeManager : MonoBehaviour
         }
         //keep persistant throughout the game
         DontDestroyOnLoad(this);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     // Start is called before the first frame update
     void Start()
@@ -26,9 +27,10 @@ public class SceneChangeManager : MonoBehaviour
     {
 
     }
-    void OnSceneLoaded(Scene scene)//can 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)//mode generally Single, but can be Additive to stack scenes on top of each other 
     {
         //do something each time scene is loaded or do something on specific scene load
+        Debug.Log("scene is loaded");
     }
     public void SwitchScene(string scene = "")
     {

@@ -9,9 +9,6 @@ public class BallCatcher : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        //if (collision.gameObject.tag.Equals("Ball"))
-        //{
         LM.BallFalls(collision.gameObject);
-        //}
     }
 }

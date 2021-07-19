@@ -30,8 +30,10 @@ public class BallController : MonoBehaviour
         }
         // ballIsActive = false once it falls out of scene.
     }   
-
-
+    public void ResetLauncher()
+    {
+        ballIsActive = false;
+    }
     void Shoot()
     {
         GameObject createBall = Instantiate(prefabBall, shootingPoint.position, shootingPoint.rotation);
