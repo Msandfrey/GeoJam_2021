@@ -17,19 +17,10 @@ public class RotateObstacles : MonoBehaviour
 
     private float randomSpeed;
 
-    public bool isSpinHorizontal;
-
     // Start is called before the first frame update
     void Start()
     {
-        if (isSpinHorizontal) 
-        {
-            originalRotation = transform.position.y;
-        }
-        else 
-        {
-            originalRotation = transform.position.z;
-        }
+        originalRotation = transform.position.z;
         targetRotation = GenerateRandomTarget();
         randomSpeed = Random.Range(minSpeed, maxSpeed);
     }
@@ -37,14 +28,7 @@ public class RotateObstacles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isSpinHorizontal)
-        {
-            transform.Rotate(new Vector3(0, randomSpeed, 0) * Time.deltaTime);
-        } 
-        else 
-        {
-            transform.Rotate(new Vector3(0, 0, randomSpeed) * Time.deltaTime);
-        }
+        transform.Rotate(new Vector3(0, 0, randomSpeed) * Time.deltaTime);
     }
 
     private float GenerateRandomTarget()
