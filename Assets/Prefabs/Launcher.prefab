@@ -209,9 +209,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a17b4c19a0f8e8458552b3ddad4f7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabBall: {fileID: 6035939524902383843, guid: 42789f36b28eed04c9bb260af2ff0acf, type: 3}
+  prefabBall: {fileID: 3290766299175084929, guid: b1393992c70a93d438be057ab87ff4b6, type: 3}
   shootingPoint: {fileID: 7034291553791832535}
   thrust: 200
+  ballIsActive: 0
 --- !u!1 &4437510530693163955
 GameObject:
   m_ObjectHideFlags: 0
