@@ -19,6 +19,8 @@ public class HUDController : MonoBehaviour
 
     private SceneChangeManager sceneChangeManager;
 
+    private bool won;
+
     private void Awake()
     {
         sceneChangeManager = GetComponent<SceneChangeManager>();
@@ -42,9 +44,16 @@ public class HUDController : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void LoadNextLevel()
+    public void LoadNextScene()
     {
-        sceneChangeManager.SwitchScene();
+        if (won)
+        {
+            LoadNextLevel();
+        }
+        else
+        {
+            RestartLevel();
+        }
     }
 
     public void RestartLevel()
@@ -64,6 +73,8 @@ public class HUDController : MonoBehaviour
 
     public void ShowLevelCompletedScreen(bool won)
     {
+        this.won = won;
+
         if (won)
         {
             levelOverResultText.text = "Victory!";
@@ -86,5 +97,10 @@ public class HUDController : MonoBehaviour
             ballCount = 0;
         }
         ballCountText.text = ballCount + "";
+    }
+
+    private void LoadNextLevel()
+    {
+        sceneChangeManager.SwitchScene();
     }
 }
