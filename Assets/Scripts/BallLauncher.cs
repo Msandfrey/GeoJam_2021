@@ -7,9 +7,7 @@ public class BallLauncher : MonoBehaviour
     public Transform launcher;
     public float launchRotationSpeed;
     float launcherAngle;
-    public Vector2 turn;
 
-    // Update is called once per frame
     void Update()
     {
         RotateLauncher();

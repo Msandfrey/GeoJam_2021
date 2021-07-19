@@ -7,31 +7,36 @@ public class BallController : MonoBehaviour
     //Matt-------------------------
     //LevelManager LM;
     //Matt-------------------------
+
+    public GameObject prefabBall;
+    public Transform shootingPoint;
     private Rigidbody rbBall;
     public float thrust = 20f;
+    public bool ballIsActive = false;
 
     void Start()
     {
         //Matt-------------------------
         //LM = FindObjectOfType<LevelManager>();
         //Matt-------------------------
-        rbBall = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1")) // shoot only if ball is NOT in air 
+        if (Input.GetButtonDown("Fire1") && !ballIsActive) // shoot only if ball is NOT in air 
         {
-
+            ballIsActive = true;
             Shoot();
         }
+        // ballIsActive = false once it falls out of scene.
     }   
 
 
     void Shoot()
     {
-        rbBall.useGravity = true;
+        GameObject createBall = Instantiate(prefabBall, shootingPoint.position, shootingPoint.rotation);
+        rbBall = createBall.GetComponent<Rigidbody>();
+
         // launch ball based on mouse position
         rbBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
@@ -39,18 +44,5 @@ public class BallController : MonoBehaviour
         direction.Normalize();
 
         rbBall.GetComponent<Rigidbody>().AddForce(direction * thrust, ForceMode.Impulse);
-        
     }
-
-    private void OnCollisionEnter(Collision col)
-    {
-        if(col.gameObject.name.Contains("Block"))
-        {
-            Destroy(col.gameObject);
-            //Matt-------------------------
-            //LM.RemoveBlock();
-            //Matt-------------------------
-        }
-    }
-
 }
