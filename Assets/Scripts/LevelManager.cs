@@ -23,7 +23,6 @@ public class LevelManager : MonoBehaviour
     public Text tempBallUI;
     public GameObject tempLoseScreenUI;
     public GameObject tempWinScreenUI;
-    public GameObject tempRespawnPoint;
 
     private void Awake()
     {

@@ -228,11 +228,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballCount: 5
+  Launcher: {fileID: 0}
+  breakoutBar: {fileID: 0}
   tempScoreUI: {fileID: 845328851358738078}
   tempBallUI: {fileID: 845328852326772813}
   tempLoseScreenUI: {fileID: 845328852457409312}
   tempWinScreenUI: {fileID: 845328852664453598}
-  tempRespawnPoint: {fileID: 0}
 --- !u!1 &845328852208319216
 GameObject:
   m_ObjectHideFlags: 0

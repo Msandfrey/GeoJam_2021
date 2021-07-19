@@ -448,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7692720875604747287, guid: 779dac087ec405c40849b22e9bbd7ea5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.769
+      value: 0.845
       objectReference: {fileID: 0}
     - target: {fileID: 7692720875604747287, guid: 779dac087ec405c40849b22e9bbd7ea5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -951,10 +951,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Launcher
       objectReference: {fileID: 0}
-    - target: {fileID: 5159657224643417305, guid: 8c27991a86c99c24caf55b3dccd31517, type: 3}
-      propertyPath: thrust
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c27991a86c99c24caf55b3dccd31517, type: 3}
 --- !u!1001 &1220958876
@@ -986,7 +982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7853705539899833514, guid: 418707031980e7e44a975e8450241a7f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.75500005
+      value: 0.648
       objectReference: {fileID: 0}
     - target: {fileID: 7853705539899833514, guid: 418707031980e7e44a975e8450241a7f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1517,7 +1513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7853705539899833514, guid: 418707031980e7e44a975e8450241a7f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.692
+      value: 0.67
       objectReference: {fileID: 0}
     - target: {fileID: 7853705539899833514, guid: 418707031980e7e44a975e8450241a7f, type: 3}
       propertyPath: m_LocalPosition.y
