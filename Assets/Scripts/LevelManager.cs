@@ -21,13 +21,11 @@ public class LevelManager : MonoBehaviour
     BallController Launcher;
     [SerializeField]
     GameObject breakoutBar;
+    [SerializeField]
+    HUDController HUDCont;
 
     //temp stuff for now
     public GameObject tempOwlThing;
-    public Text tempScoreUI;
-    public Text tempBallUI;
-    public GameObject tempLoseScreenUI;
-    public GameObject tempWinScreenUI;
 
     private void Awake()
     {
@@ -39,7 +37,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         sceneManager = FindObjectOfType<SceneChangeManager>();
-        tempBallUI.text = ballCount.ToString();
+        HUDCont.SetBallCount(ballCount);
     }
 
     // Update is called once per frame
@@ -99,7 +97,7 @@ public class LevelManager : MonoBehaviour
     public void BallDecrement()
     {
         ballCount--;
-        tempBallUI.text = ballCount.ToString();
+        HUDCont.SetBallCount(ballCount);
     }
     public void BallFalls(GameObject ball)
     {
@@ -107,7 +105,7 @@ public class LevelManager : MonoBehaviour
         Destroy(ball);
         if (win) { return; }
         //check if they lost
-        if(ballCount < 0 && !win)
+        if(ballCount <= 0 && !win)
         {
             Lose();
             return;
@@ -123,7 +121,7 @@ public class LevelManager : MonoBehaviour
     {
         //calculate score based on block type, later with combo shtuff
         score += blockPoints*bonusMultiplier;
-        tempScoreUI.text = score.ToString();
+        HUDCont.SetScore(score);
     }
 
     int CalcHitStreak(float time)
@@ -159,7 +157,7 @@ public class LevelManager : MonoBehaviour
     public void Win()
     {
         //show win screen
-        tempWinScreenUI.SetActive(true);
+        HUDCont.ShowLevelCompletedScreen(true);
         win = true;
         //show options after win
         //main menu?
@@ -173,7 +171,7 @@ public class LevelManager : MonoBehaviour
     public void Lose()
     {
         //show lose screen
-        tempLoseScreenUI.SetActive(true);
+        HUDCont.ShowLevelCompletedScreen(false);
         //show options after losing
         //restart?
         //main menu?

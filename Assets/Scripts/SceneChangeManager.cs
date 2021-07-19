@@ -7,17 +7,7 @@ public class SceneChangeManager : MonoBehaviour
 {
     public const string MAIN_MENU_SCENE = "MainMenuScreen";
 
-    private void Awake()
-    {
-        //check to make sure there is only one of these bad boys in play
-        if(FindObjectsOfType<SceneChangeManager>().Length > 1)
-        {
-            Destroy(this);
-        }
-        //keep persistant throughout the game
-        DontDestroyOnLoad(this);
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+
     // Start is called before the first frame update
     void Start()
     {
