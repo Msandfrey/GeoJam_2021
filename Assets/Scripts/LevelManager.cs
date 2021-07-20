@@ -32,7 +32,8 @@ public class LevelManager : MonoBehaviour
     HUDController HUDCont;
     [SerializeField]
     int levelNumber = 1;
-
+    [SerializeField]
+    OwlController owl;
 
     //temp stuff for now
     public GameObject tempOwlThing;
@@ -65,6 +66,7 @@ public class LevelManager : MonoBehaviour
         if (peggle == breakout)
         {
             peg = !peg;
+            owl.ReverseNoWait();
         }
         else//if they are not the same, peggle value can decide our fate
         {
@@ -163,6 +165,7 @@ public class LevelManager : MonoBehaviour
         if(activeBalls.Count <= 0 && !peg && switchToPeggleOnNoBalls)
         {
             ActivateSwitch();
+            owl.ReverseNoWait();
         }
         //reset the launcher
         //Launcher.ResetLauncher();
