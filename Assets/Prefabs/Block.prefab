@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1594378001565476894}
   - component: {fileID: 130257829189524526}
   - component: {fileID: 5528290102653159630}
+  - component: {fileID: 5371483942033474750}
   m_Layer: 0
   m_Name: Block
   m_TagString: Block
@@ -112,3 +113,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!114 &5371483942033474750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394228525669810460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba1cdf0ae4138843916761a687c34a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 1
+  points: 5

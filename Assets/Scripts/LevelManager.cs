@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     bool timerActive = false;
     [SerializeField]
     float switchLagTime = .2f;
-    GameObject activeBall;
+    Ball activeBall;
 
     SceneChangeManager sceneManager;
     [SerializeField]
@@ -64,7 +64,7 @@ public class LevelManager : MonoBehaviour
             //turn gravity on for the ball
             if (activeBall)
             {
-                activeBall.GetComponent<Rigidbody>().useGravity = true;
+                activeBall.ToPeggle();
             }
         }
         else//else hide launcher show bar
@@ -80,7 +80,7 @@ public class LevelManager : MonoBehaviour
             //turn off gravity of ball
             if (activeBall)
             {
-                activeBall.GetComponent<Rigidbody>().useGravity = false;
+                activeBall.ToBreakout();
             }
         }
     }
@@ -91,7 +91,7 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1;
         tempOwlThing.SetActive(false);
     }
-    public void RemoveBlock()//take in block type/points value
+    public void RemoveBlock(int points)//take in block type/points value
     {
         blocksLeft--;
         timerActive = true;
@@ -104,7 +104,7 @@ public class LevelManager : MonoBehaviour
             // Debug.Log("Hit streak: " + hitStreak);
             // Debug.Log("Bonus: " + bonus);
 
-            AddScore(1,bonus);
+            AddScore(points,bonus);
             timerActive = false;
         }
 
@@ -113,7 +113,7 @@ public class LevelManager : MonoBehaviour
             Win();
         }
     }
-    public void SetActiveBall(GameObject ball)
+    public void SetActiveBall(Ball ball)
     {
         activeBall = ball;
     }

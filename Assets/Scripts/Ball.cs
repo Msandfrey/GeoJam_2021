@@ -19,17 +19,32 @@ public class Ball : MonoBehaviour
         {
             rb.velocity = constantSpeed * (rb.velocity.normalized);
         }
-        else
+        /***else
         {
             constantSpeed = rb.velocity.magnitude;
-        }
+        }**/
+    }
+    public void ToPeggle()
+    {
+        rb.useGravity = true;
+    }
+    public void ToBreakout()
+    {
+        constantSpeed = rb.velocity.magnitude;
+        rb.useGravity = false;
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag.Equals("Block"))
+        Destructible block = collision.gameObject.GetComponent<Destructible>();
+        if (block)
         {
-            Destroy(collision.gameObject);
-            levelManager.RemoveBlock();
+            int blockHP = block.LoseHP();
+            if(blockHP <= 0)
+            {
+                int blockPoints = block.GetPoints();
+                block.Die();
+                levelManager.RemoveBlock(blockPoints);
+            }
         }
     }
 }
