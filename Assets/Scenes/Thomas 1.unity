@@ -2309,11 +2309,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballCount: 10
+  gravity: -9.8
+  slowTimeOnSwitch: 0
+  switchToPeggleOnNoBalls: 1
   switchLagTime: 0.2
   Launcher: {fileID: 3637409114274144085}
   breakoutBar: {fileID: 7354795599266767399}
   HUDCont: {fileID: 898366742}
   levelNumber: 1
+  owl: {fileID: 625163903489694254}
   tempOwlThing: {fileID: 2041541742462339460}
 --- !u!4 &1738966964
 Transform:
@@ -2857,7 +2861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelManager: {fileID: 1738966963}
   speed: 5
-  owlWaitTime: 1.5
+  owlWaitTime: 5
 --- !u!4 &625163903489694255
 Transform:
   m_ObjectHideFlags: 0

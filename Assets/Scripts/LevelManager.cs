@@ -32,6 +32,10 @@ public class LevelManager : MonoBehaviour
     HUDController HUDCont;
     [SerializeField]
     int levelNumber = 1;
+    [SerializeField]
+    AudioClip switchModeAudioClip;
+    [SerializeField]
+    OwlController owl;
 
 
     //temp stuff for now
@@ -42,6 +46,7 @@ public class LevelManager : MonoBehaviour
         GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
         blocksLeft = blocks.Length;
         Physics.gravity = new Vector3(0, gravity, 0);
+        Time.timeScale = 1;
     }
 
     // Start is called before the first frame update
@@ -65,6 +70,7 @@ public class LevelManager : MonoBehaviour
         if (peggle == breakout)
         {
             peg = !peg;
+            owl.ReverseNoWait();
         }
         else//if they are not the same, peggle value can decide our fate
         {
@@ -105,6 +111,7 @@ public class LevelManager : MonoBehaviour
             }
             audioManager.PlayBrickBreakerLevelMusic(levelNumber);
         }
+        audioManager.PlayAudioClip(switchModeAudioClip);
     }
     public IEnumerator InitiateSwitchToTheOtherSide()
     {
@@ -163,6 +170,7 @@ public class LevelManager : MonoBehaviour
         if(activeBalls.Count <= 0 && !peg && switchToPeggleOnNoBalls)
         {
             ActivateSwitch();
+            owl.ReverseNoWait();
         }
         //reset the launcher
         //Launcher.ResetLauncher();

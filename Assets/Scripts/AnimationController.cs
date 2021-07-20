@@ -11,11 +11,16 @@ public class AnimationController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    void Update()
+    {
+
+    }
+
     private void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.name.Contains("Ball"))
         {
-            animator.Play("Bouncer", -1, 0f);
+            animator.Play("TwitchBouncer", -1, 0f);
         }
     }
 }

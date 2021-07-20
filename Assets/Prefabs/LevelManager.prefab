@@ -288,10 +288,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballCount: 5
+  gravity: -9.8
+  slowTimeOnSwitch: 0
+  switchToPeggleOnNoBalls: 0
   switchLagTime: 0.2
   Launcher: {fileID: 0}
   breakoutBar: {fileID: 0}
   HUDCont: {fileID: 0}
+  levelNumber: 1
+  switchModeAudioClip: {fileID: 8300000, guid: efded59807fd44f1380d467519892780, type: 3}
   tempOwlThing: {fileID: 0}
 --- !u!1 &845328852208319216
 GameObject:
