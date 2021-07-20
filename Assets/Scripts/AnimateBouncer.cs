@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerBouncer : MonoBehaviour
+public class AnimateBouncer : MonoBehaviour
 {
     public Animator animator;
 
