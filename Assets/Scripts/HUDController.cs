@@ -73,6 +73,7 @@ public class HUDController : MonoBehaviour
 
     public void ShowLevelCompletedScreen(bool won)
     {
+        Time.timeScale = 0;
         this.won = won;
 
         if (won)

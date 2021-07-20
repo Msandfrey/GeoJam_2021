@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3443569451424748939}
   - component: {fileID: 3443569451424748938}
   - component: {fileID: 3443569451424748937}
+  - component: {fileID: -1113453855001262140}
   m_Layer: 0
   m_Name: platform
   m_TagString: Untagged
@@ -112,3 +113,16 @@ MonoBehaviour:
   minXDistance: 2
   minSpeed: 1
   maxSpeed: 5
+--- !u!114 &-1113453855001262140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3443569451424748932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556509ac3ac1943839d137759198cd83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 5db44e6a0b6784f6b9721ff0acaeb7fd, type: 3}

@@ -12,6 +12,10 @@ public class OwlController : MonoBehaviour
     float speed = 10;
     [SerializeField]
     float owlWaitTime = 1.5f;
+    [SerializeField]
+    AudioClip moveAudioClip;
+    AudioManager audioManager;
+
     Coroutine CoroutineVar;
     bool moving = true;
     bool isAtBottom = false;
@@ -22,7 +26,8 @@ public class OwlController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = speed * Vector3.up * (down ? -1 : 1);
-        //CoroutineVar = WaitAndReverse();
+
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -63,7 +68,8 @@ public class OwlController : MonoBehaviour
         }
         //down = !down;
         //rb.velocity = speed * Vector3.up * (down ? -1 : 1);
-        //moving = true;
+        moving = true;
+        audioManager.PlayAudioClip(moveAudioClip);
     }
     private void OnTriggerEnter(Collider other)
     {

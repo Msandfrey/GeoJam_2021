@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public AudioSource musicAudioSource;
+    public AudioSource sfxAudioSource;
 
     public AudioClip mainMenuMusic;
 
@@ -23,6 +24,19 @@ public class AudioManager : MonoBehaviour
     public void SetVolume(float volume)
     {
         musicAudioSource.volume = volume;
+        sfxAudioSource.volume = volume;
+    }
+
+    public void PlayAudioClip(AudioClip clip)
+    {
+        if (clip == null)
+        {
+            Debug.Log("AudioClip not set. Skipping audio.");
+        }
+        else
+        {
+            sfxAudioSource.PlayOneShot(clip);
+        }
     }
 
     public void PlayMainMenuMusic()
