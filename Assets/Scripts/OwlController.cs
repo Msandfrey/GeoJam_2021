@@ -6,7 +6,7 @@ public class OwlController : MonoBehaviour
 {
     [SerializeField]
     LevelManager levelManager;
-    bool up = false;
+    bool down = true;
     Rigidbody rb;
     [SerializeField]
     float speed = 10;
@@ -17,7 +17,7 @@ public class OwlController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = speed * Vector3.up * (up ? 1 : -1);
+        rb.velocity = speed * Vector3.up * (down ? -1 : 1);
     }
 
     // Update is called once per frame
@@ -27,14 +27,14 @@ public class OwlController : MonoBehaviour
     IEnumerator WaitAndReverse()
     {
         yield return new WaitForSeconds(owlWaitTime);
-        up = !up;
-        rb.velocity = speed * Vector3.up * (up ? 1 : -1);
+        down = !down;
+        rb.velocity = speed * Vector3.up * (down ? -1 : 1);
     }
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("i fucking made it hoot");
         rb.velocity = Vector3.zero;
         StartCoroutine(WaitAndReverse());
-        levelManager.ActivateSwitch(!up ? false : true, !up ? true : false);
+        levelManager.ActivateSwitch(down ? false : true, down ? true : false);
     }
 }

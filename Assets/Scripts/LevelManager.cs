@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     int ballCount = 5;
     int blocksLeft;
     [SerializeField]
-    float gravity = -.98f;
+    float gravity = -9.8f;
     bool win = false;
     bool peg = true;
     bool timerActive = false;
