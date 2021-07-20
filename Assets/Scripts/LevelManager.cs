@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour
     bool timerActive = false;
     [SerializeField]
     float switchLagTime = .2f;
-    Ball activeBall;
+    List<GameObject> activeBalls = new List<GameObject>();
 
     SceneChangeManager sceneManager;
     [SerializeField]
@@ -62,9 +62,12 @@ public class LevelManager : MonoBehaviour
             Launcher.gameObject.SetActive(true);
             breakoutBar.SetActive(false);
             //turn gravity on for the ball
-            if (activeBall)
+            if (activeBalls != null)
             {
-                activeBall.ToPeggle();
+                foreach(GameObject ball in activeBalls)
+                {
+                    ball.GetComponent<Ball>().ToPeggle();
+                }
             }
         }
         else//else hide launcher show bar
@@ -76,11 +79,14 @@ public class LevelManager : MonoBehaviour
             //coroutine for increase size and wait x secs
             StartCoroutine(InitiateSwitchToTheOtherSide());
             Launcher.gameObject.SetActive(false);
-            breakoutBar.SetActive(true); 
+            breakoutBar.SetActive(true);
             //turn off gravity of ball
-            if (activeBall)
+            if (activeBalls != null)
             {
-                activeBall.ToBreakout();
+                foreach (GameObject ball in activeBalls)
+                {
+                    ball.GetComponent<Ball>().ToBreakout();
+                }
             }
         }
     }
@@ -113,9 +119,9 @@ public class LevelManager : MonoBehaviour
             Win();
         }
     }
-    public void SetActiveBall(Ball ball)
+    public void AddActiveBall(GameObject ball)
     {
-        activeBall = ball;
+        activeBalls.Add(ball);
     }
     public void BallDecrement()
     {
@@ -124,21 +130,18 @@ public class LevelManager : MonoBehaviour
     }
     public void BallFalls(GameObject ball)
     {
+        activeBalls.Remove(ball);
         //destroy the ball
         Destroy(ball);
         if (win) { return; }
         //check if they lost
-        if(ballCount <= 0 && !win)
+        if(ballCount <= 0 && !win && activeBalls.Count <= 0)
         {
             Lose();
             return;
         }
-        if (!peg)
-        {
-            ActivateSwitch();
-        }
         //reset the launcher
-        Launcher.ResetLauncher();
+        //Launcher.ResetLauncher();
     }
     void AddScore(int blockPoints, int bonusMultiplier)//add paramtere later
     {

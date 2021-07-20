@@ -12,7 +12,7 @@ public class BallController : MonoBehaviour
     public Transform shootingPoint;
     private Rigidbody rbBall;
     public float thrust = 20f;
-    public bool ballIsActive = false;
+    //public bool ballIsActive = false;
 
     void Start()
     {
@@ -23,22 +23,21 @@ public class BallController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !ballIsActive) // shoot only if ball is NOT in air 
+        if (Input.GetButtonDown("Fire1"))// && !ballIsActive) // shoot only if ball is NOT in air 
         {
-            ballIsActive = true;
+            //ballIsActive = true;
             Shoot();
         }
     }   
     public void ResetLauncher()
     {
-        ballIsActive = false;
+        //ballIsActive = false;
     }
     void Shoot()
     {
         levelManager.BallDecrement();
         GameObject createBall = Instantiate(prefabBall, shootingPoint.position, shootingPoint.rotation);
         rbBall = createBall.GetComponent<Rigidbody>();
-        levelManager.SetActiveBall(createBall.GetComponent<Ball>());
         // launch ball based on mouse position
         rbBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
@@ -46,5 +45,6 @@ public class BallController : MonoBehaviour
         direction.Normalize();
 
         rbBall.GetComponent<Rigidbody>().AddForce(direction * thrust, ForceMode.Impulse);
+        levelManager.AddActiveBall(createBall);
     }
 }
