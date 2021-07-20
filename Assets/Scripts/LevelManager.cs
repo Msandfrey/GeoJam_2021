@@ -44,9 +44,17 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
     }
-    public void ActivateSwitch()//for now it just does this simple thing
+    public void ActivateSwitch(bool peggle = false, bool breakout = false)//for now it just does this simple thing
     {
-        peg = !peg;
+        //if not specified it will switch to opposite (covers both false and true)
+        if (peggle == breakout)
+        {
+            peg = !peg;
+        }
+        else//if they are not the same, peggle value can decide our fate
+        {
+            peg = peggle;
+        }
         //if peg show launcher hide bar
         if (peg)
         {
