@@ -38,7 +38,7 @@ public class BallController : MonoBehaviour
         levelManager.BallDecrement();
         GameObject createBall = Instantiate(prefabBall, shootingPoint.position, shootingPoint.rotation);
         rbBall = createBall.GetComponent<Rigidbody>();
-
+        levelManager.SetActiveBall(createBall);
         // launch ball based on mouse position
         rbBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);

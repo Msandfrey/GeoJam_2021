@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     bool timerActive = false;
     [SerializeField]
     float switchLagTime = .2f;
+    GameObject activeBall;
 
     SceneChangeManager sceneManager;
     [SerializeField]
@@ -60,6 +61,11 @@ public class LevelManager : MonoBehaviour
         {
             Launcher.gameObject.SetActive(true);
             breakoutBar.SetActive(false);
+            //turn gravity on for the ball
+            if (activeBall)
+            {
+                activeBall.GetComponent<Rigidbody>().useGravity = true;
+            }
         }
         else//else hide launcher show bar
         {
@@ -70,7 +76,12 @@ public class LevelManager : MonoBehaviour
             //coroutine for increase size and wait x secs
             StartCoroutine(InitiateSwitchToTheOtherSide());
             Launcher.gameObject.SetActive(false);
-            breakoutBar.SetActive(true);
+            breakoutBar.SetActive(true); 
+            //turn off gravity of ball
+            if (activeBall)
+            {
+                activeBall.GetComponent<Rigidbody>().useGravity = false;
+            }
         }
     }
     public IEnumerator InitiateSwitchToTheOtherSide()
@@ -101,6 +112,10 @@ public class LevelManager : MonoBehaviour
         {
             Win();
         }
+    }
+    public void SetActiveBall(GameObject ball)
+    {
+        activeBall = ball;
     }
     public void BallDecrement()
     {
