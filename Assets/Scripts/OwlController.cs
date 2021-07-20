@@ -35,6 +35,6 @@ public class OwlController : MonoBehaviour
         Debug.Log("i fucking made it hoot");
         rb.velocity = Vector3.zero;
         StartCoroutine(WaitAndReverse());
-        levelManager.ActivateSwitch(up ? false : true, up ? true : false);
+        levelManager.ActivateSwitch(!up ? false : true, !up ? true : false);
     }
 }
