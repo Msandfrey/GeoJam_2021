@@ -12,12 +12,16 @@ public class OwlController : MonoBehaviour
     float speed = 10;
     [SerializeField]
     float owlWaitTime = 1.5f;
-
+    [SerializeField]
+    AudioClip moveAudioClip;
+    AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = speed * Vector3.up * (down ? -1 : 1);
+
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -29,6 +33,7 @@ public class OwlController : MonoBehaviour
         yield return new WaitForSeconds(owlWaitTime);
         down = !down;
         rb.velocity = speed * Vector3.up * (down ? -1 : 1);
+        audioManager.PlayAudioClip(moveAudioClip);
     }
     private void OnTriggerEnter(Collider other)
     {
