@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -16,6 +15,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     float switchLagTime = .2f;
     List<GameObject> activeBalls = new List<GameObject>();
+    AudioManager audioManager;
 
     SceneChangeManager sceneManager;
     [SerializeField]
@@ -24,6 +24,9 @@ public class LevelManager : MonoBehaviour
     GameObject breakoutBar;
     [SerializeField]
     HUDController HUDCont;
+    [SerializeField]
+    int levelNumber = 1;
+
 
     //temp stuff for now
     public GameObject tempOwlThing;
@@ -38,6 +41,10 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         sceneManager = FindObjectOfType<SceneChangeManager>();
+
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.PlayPeggleLevelMusic(levelNumber);
+
         HUDCont.SetBallCount(ballCount);
     }
 
@@ -69,6 +76,7 @@ public class LevelManager : MonoBehaviour
                     ball.GetComponent<Ball>().ToPeggle();
                 }
             }
+            audioManager.PlayPeggleLevelMusic(levelNumber);
         }
         else//else hide launcher show bar
         {
@@ -88,6 +96,7 @@ public class LevelManager : MonoBehaviour
                     ball.GetComponent<Ball>().ToBreakout();
                 }
             }
+            audioManager.PlayBrickBreakerLevelMusic(levelNumber);
         }
     }
     public IEnumerator InitiateSwitchToTheOtherSide()

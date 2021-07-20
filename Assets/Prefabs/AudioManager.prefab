@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicAudioSource: {fileID: 4089205918210729787}
-  mainMenuMusic: {fileID: 8300000, guid: 96201d32271434f68bf69ce79eb9a360, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: b9b839c113a093a47a110235debf3ad1, type: 3}
+  levelPeggleMusicClips:
+  - {fileID: 8300000, guid: 9ebebcda7d8a8a642b22b8c8ff65f8ee, type: 3}
+  levelBrickBreakerMusicClips:
+  - {fileID: 8300000, guid: 0f994d25d4e063c4aabd08804596c6e2, type: 3}
 --- !u!82 &4089205918210729787
 AudioSource:
   m_ObjectHideFlags: 0

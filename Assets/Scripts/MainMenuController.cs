@@ -18,8 +18,8 @@ public class MainMenuController : MonoBehaviour
 
     private void Start()
     {
-        playerSettings = GetComponent<PlayerSettings>();
-        sceneChangeManager = GetComponent<SceneChangeManager>();
+        playerSettings = FindObjectOfType<PlayerSettings>();
+        sceneChangeManager = FindObjectOfType<SceneChangeManager>();
 
         float volume = playerSettings.GetVolume();
         volumeSlider.value = volume;
