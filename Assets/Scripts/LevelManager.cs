@@ -42,6 +42,7 @@ public class LevelManager : MonoBehaviour
         GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
         blocksLeft = blocks.Length;
         Physics.gravity = new Vector3(0, gravity, 0);
+        Time.timeScale = 1;
     }
 
     // Start is called before the first frame update
