@@ -32,6 +32,8 @@ public class LevelManager : MonoBehaviour
     HUDController HUDCont;
     [SerializeField]
     int levelNumber = 1;
+    [SerializeField]
+    AudioClip switchModeAudioClip;
 
 
     //temp stuff for now
@@ -106,6 +108,7 @@ public class LevelManager : MonoBehaviour
             }
             audioManager.PlayBrickBreakerLevelMusic(levelNumber);
         }
+        audioManager.PlayAudioClip(switchModeAudioClip);
     }
     public IEnumerator InitiateSwitchToTheOtherSide()
     {

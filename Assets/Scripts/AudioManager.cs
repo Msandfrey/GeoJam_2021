@@ -29,7 +29,14 @@ public class AudioManager : MonoBehaviour
 
     public void PlayAudioClip(AudioClip clip)
     {
-        sfxAudioSource.PlayOneShot(clip);
+        if (clip == null)
+        {
+            Debug.Log("AudioClip not set. Skipping audio.");
+        }
+        else
+        {
+            sfxAudioSource.PlayOneShot(clip);
+        }
     }
 
     public void PlayMainMenuMusic()
