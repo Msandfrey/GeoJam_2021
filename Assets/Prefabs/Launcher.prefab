@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1474675670811599535, guid: f826d8f476ce3a94484070bf76644ae2, type: 3}
+  - {fileID: 2100000, guid: 0ca6a152710ceba479b835f0af3edeea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,7 +98,6 @@ MonoBehaviour:
   prefabBall: {fileID: 3290766299175084929, guid: b1393992c70a93d438be057ab87ff4b6, type: 3}
   shootingPoint: {fileID: 1821424658791659649}
   thrust: 20
-  ballIsActive: 0
 --- !u!1 &6705255914466181673
 GameObject:
   m_ObjectHideFlags: 0
