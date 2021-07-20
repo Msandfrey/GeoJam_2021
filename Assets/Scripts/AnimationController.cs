@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimateBouncer : MonoBehaviour
+public class AnimationController : MonoBehaviour
 {
     public Animator animator;
 
@@ -15,7 +15,7 @@ public class AnimateBouncer : MonoBehaviour
     {
         if (col.gameObject.name.Contains("Ball"))
         {
-            animator.Play("Take 001", -1, 0f);
+            animator.Play("Bouncer", -1, 0f);
         }
     }
 }
