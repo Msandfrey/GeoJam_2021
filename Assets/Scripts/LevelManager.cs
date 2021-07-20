@@ -81,9 +81,9 @@ public class LevelManager : MonoBehaviour
             timer += Time.deltaTime; // start timer to measure time lapse of subsequent block hits
             int hitStreak = CalcHitStreak(timer); // based on time, it's either 1, 2, 3
             int bonus = CalcHitBonus(hitStreak);// based on hitstreak, it's either, 10, 5, 1
-            Debug.Log("Time: " + timer);
-            Debug.Log("Hit streak: " + hitStreak);
-            Debug.Log("Bonus: " + bonus);
+            // Debug.Log("Time: " + timer);
+            // Debug.Log("Hit streak: " + hitStreak);
+            // Debug.Log("Bonus: " + bonus);
 
             AddScore(1,bonus);
             timerActive = false;
