@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4826424080661462211}
   - component: {fileID: 4664903149685146747}
   - component: {fileID: 143777842317135897}
+  - component: {fileID: 6100282871587689570}
   m_Layer: 0
   m_Name: BrickAlt_2
   m_TagString: Untagged
@@ -112,3 +113,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6100282871587689570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6483524648420515094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556509ac3ac1943839d137759198cd83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: e5e44dce8c11f48979e40aa66cb30ad3, type: 3}
