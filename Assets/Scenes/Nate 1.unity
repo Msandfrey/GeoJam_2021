@@ -2310,6 +2310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballCount: 10
+  slowTimeOnSwitch: 0
   switchLagTime: 0.2
   Launcher: {fileID: 3637409114274144085}
   breakoutBar: {fileID: 7354795599266767399}
@@ -2872,7 +2873,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625163903489694249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.24, y: -8.85, z: -2}
+  m_LocalPosition: {x: 5.24, y: 12.31, z: -2}
   m_LocalScale: {x: 0.30854, y: 0.30854, z: 0.30854}
   m_Children: []
   m_Father: {fileID: 0}

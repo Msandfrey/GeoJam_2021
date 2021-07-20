@@ -35,16 +35,20 @@ public class BallController : MonoBehaviour
     }
     void Shoot()
     {
-        levelManager.BallDecrement();
-        GameObject createBall = Instantiate(prefabBall, shootingPoint.position, shootingPoint.rotation);
-        rbBall = createBall.GetComponent<Rigidbody>();
-        // launch ball based on mouse position
-        rbBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-        Vector3 direction = (Vector3)(Input.mousePosition-screenPoint);
-        direction.Normalize();
+        //first check if there are balls to fire
+        if (levelManager.GetRemainingBalls() > 0)
+        {
+            levelManager.BallDecrement();
+            GameObject createBall = Instantiate(prefabBall, shootingPoint.position, shootingPoint.rotation);
+            rbBall = createBall.GetComponent<Rigidbody>();
+            // launch ball based on mouse position
+            rbBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            Vector3 screenPoint = Camera.main.WorldToScreenPoint(transform.position);
+            Vector3 direction = (Vector3)(Input.mousePosition-screenPoint);
+            direction.Normalize();
 
-        rbBall.GetComponent<Rigidbody>().AddForce(direction * thrust, ForceMode.Impulse);
-        levelManager.AddActiveBall(createBall);
+            rbBall.GetComponent<Rigidbody>().AddForce(direction * thrust, ForceMode.Impulse);
+            levelManager.AddActiveBall(createBall);
+        }
     }
 }

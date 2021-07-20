@@ -6,7 +6,7 @@ public class OwlController : MonoBehaviour
 {
     [SerializeField]
     LevelManager levelManager;
-    bool up = true;
+    bool up = false;
     Rigidbody rb;
     [SerializeField]
     float speed = 10;

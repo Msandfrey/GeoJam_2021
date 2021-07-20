@@ -9,9 +9,15 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     int ballCount = 5;
     int blocksLeft;
+    [SerializeField]
+    float gravity = -.98f;
     bool win = false;
     bool peg = true;
     bool timerActive = false;
+    [SerializeField]
+    bool slowTimeOnSwitch = false;
+    [SerializeField]
+    bool switchToPeggleOnNoBalls = false;
     [SerializeField]
     float switchLagTime = .2f;
     List<GameObject> activeBalls = new List<GameObject>();
@@ -35,6 +41,7 @@ public class LevelManager : MonoBehaviour
     {
         GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
         blocksLeft = blocks.Length;
+        Physics.gravity = new Vector3(0, gravity, 0);
     }
 
     // Start is called before the first frame update
@@ -81,7 +88,7 @@ public class LevelManager : MonoBehaviour
         else//else hide launcher show bar
         {
             //slow down time
-            Time.timeScale = .1f;
+            Time.timeScale = slowTimeOnSwitch ? .1f : 1f;
             //show owl
             tempOwlThing.SetActive(true);
             //coroutine for increase size and wait x secs
@@ -137,6 +144,10 @@ public class LevelManager : MonoBehaviour
         ballCount--;
         HUDCont.SetBallCount(ballCount);
     }
+    public int GetRemainingBalls()
+    {
+        return ballCount;
+    }
     public void BallFalls(GameObject ball)
     {
         activeBalls.Remove(ball);
@@ -148,6 +159,10 @@ public class LevelManager : MonoBehaviour
         {
             Lose();
             return;
+        }
+        if(activeBalls.Count <= 0 && !peg && switchToPeggleOnNoBalls)
+        {
+            ActivateSwitch();
         }
         //reset the launcher
         //Launcher.ResetLauncher();

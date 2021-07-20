@@ -5,6 +5,8 @@ using UnityEngine;
 public class Switcheroo : MonoBehaviour
 {
     LevelManager levelManager;
+    [SerializeField]
+    bool doesSwitchHide = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,10 @@ public class Switcheroo : MonoBehaviour
         {
             collision.gameObject.GetComponent<Rigidbody>().useGravity = false;//need to change it so that all balls have no gravity?
             levelManager.ActivateSwitch();
-            gameObject.SetActive(false);
+            if (doesSwitchHide)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }
