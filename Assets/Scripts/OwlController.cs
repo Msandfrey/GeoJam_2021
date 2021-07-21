@@ -11,7 +11,13 @@ public class OwlController : MonoBehaviour
     [SerializeField]
     float speed = 10;
     [SerializeField]
-    float owlWaitTime = 1.5f;
+    [Tooltip("Sets the minimum time for the owl to wait before moving. If this is greater than Max Wait Time, then the values are automatically swapped.")]
+    [Range(0.0f, 15.0f)]
+    float minWaitTime = 1.5f;
+    [SerializeField]
+    [Tooltip("Sets the maximum time for the owl to wait before moving. If this is greater than Max Wait Time, then the values are automatically swapped.")]
+    [Range(0.0f, 15.0f)]
+    float maxWaitTime = 1.5f;
     [SerializeField]
     AudioClip moveAudioClip;
     AudioManager audioManager;
@@ -25,9 +31,10 @@ public class OwlController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = speed * Vector3.up * (down ? -1 : 1);
+        //rb.velocity = speed * Vector3.up * (down ? -1 : 1);
 
         audioManager = FindObjectOfType<AudioManager>();
+        StartCoroutine(StartDelayForOwl());
     }
 
     // Update is called once per frame
@@ -53,8 +60,18 @@ public class OwlController : MonoBehaviour
             //rb.velocity = speed * Vector3.up * (down ? -1 : 1);
         }
     }
+    IEnumerator StartDelayForOwl()
+    {
+        //Debug.Log("wait");
+        //float owlWaitTime = Random.Range(minWaitTime, maxWaitTime);
+        yield return new WaitForSeconds(maxWaitTime);
+        rb.velocity = -1 * speed * Vector3.up;
+    }
     IEnumerator WaitAndReverse()
     {
+        float owlWaitTime = Random.Range(minWaitTime, maxWaitTime);
+        Debug.Log("Setting owl wait time to: " + owlWaitTime);
+
         yield return new WaitForSeconds(owlWaitTime);
         if (isAtBottom)
         {
@@ -87,6 +104,6 @@ public class OwlController : MonoBehaviour
             isAtBottom = false;
         }
         CoroutineVar = StartCoroutine(WaitAndReverse());
-        levelManager.ActivateSwitch(!down, down);
+        levelManager.OwlSwitch(!down);
     }
 }

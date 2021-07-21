@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +23,12 @@ public class AudioManager : MonoBehaviour
     public void SetVolume(float volume)
     {
         musicAudioSource.volume = volume;
-        sfxAudioSource.volume = volume;
+
+        // We want the sfx to be slightly louder than the background music. We could
+        // use audio mixing for this, but this is a cheaper and easier hack.
+        // This can result in the volumes for background music sfx being the same if the player
+        // turns up the volume slider, but that's likely rare since the music clips are loud by default. 
+        sfxAudioSource.volume = Mathf.Min(volume + .2f, 1.0f);
     }
 
     public void PlayAudioClip(AudioClip clip)
