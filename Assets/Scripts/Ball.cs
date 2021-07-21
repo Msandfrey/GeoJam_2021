@@ -11,6 +11,9 @@ public class Ball : MonoBehaviour
     float timer = 0f;
     [SerializeField]
     float allowedIdleTimeBeforeDeath = 4f;
+    public bool GottaSwitchModes;
+    public bool DoesBallSwitchOnCollision = true;
+    bool GravityOn = true;
 
     private void Start()
     {
@@ -59,12 +62,28 @@ public class Ball : MonoBehaviour
     }
     public void ToPeggle()
     {
-        rb.useGravity = true;
+        if (DoesBallSwitchOnCollision)
+        {
+            GottaSwitchModes = true;
+            GravityOn = true;
+        }
+        else
+        {
+            rb.useGravity = true;
+        }
     }
     public void ToBreakout()
     {
         constantSpeed = rb.velocity.magnitude;
-        rb.useGravity = false;
+        if (DoesBallSwitchOnCollision)
+        {
+            GottaSwitchModes = true;
+            GravityOn = false;
+        }
+        else
+        {
+            rb.useGravity = false;
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -78,6 +97,11 @@ public class Ball : MonoBehaviour
                 block.Die();
                 levelManager.RemoveBlock(blockPoints);
             }
+        }
+        if (GottaSwitchModes)
+        {
+            rb.useGravity = GravityOn;
+            GottaSwitchModes = false;
         }
     }
 }
