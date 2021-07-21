@@ -9,6 +9,11 @@ public class BallLauncher : MonoBehaviour
         RotateLauncher();
     }
 
+    void OnMouseOver()
+    {
+        Debug.Log(this.gameObject.name);
+    }
+
 
     void RotateLauncher()
     {
