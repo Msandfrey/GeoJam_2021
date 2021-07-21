@@ -12,8 +12,12 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     float gravity = -9.8f;
     bool win = false;
+    //-------------------
+    [SerializeField]
     bool peg = true;
+    [SerializeField]
     bool unoReverseCard = false;
+    //0----------------
     bool timerActive = false;
     [SerializeField]
     bool slowTimeOnSwitch = false;
@@ -84,13 +88,14 @@ public class LevelManager : MonoBehaviour
     public void PlayerSwitch()
     {
         unoReverseCard = !unoReverseCard;
-        ActivateSwitch(!peg);
+        ActivateSwitch(unoReverseCard ? !peg : peg);
     }
     public void OwlSwitch(bool peggle)//for now it just does this simple thing
     {
-        peg = unoReverseCard ? !peggle : peggle;
-        ActivateSwitch(peg);
-        if(!peg && activeBalls.Count <= 0)
+        peg = peggle;
+        bool isPeggleShown = unoReverseCard ? !peg : peg;
+        ActivateSwitch(isPeggleShown);
+        if(!isPeggleShown && activeBalls.Count <= 0)
         {
             //if we are gonna switch to breakout with no balls, send owl back immediately
             owl.ReverseNoWait();
