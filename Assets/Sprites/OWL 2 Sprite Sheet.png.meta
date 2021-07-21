@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: 3456b5ad8f5b32048ae292f2c3a300f9
+guid: c59b8dd3bc7b6634b9fcce90309de942
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1128793241621525221
-    second: Owl 2 turn head anim_0
+      213: 7286598206108069997
+    second: OWL 2 Sprite Sheet_0
   - first:
-      213: -1707714316203651387
-    second: Owl 2 turn head anim_1
+      213: -1010934467476350691
+    second: OWL 2 Sprite Sheet_1
   - first:
-      213: -1889052745540065926
-    second: Owl 2 turn head anim_2
+      213: 7359264937007464962
+    second: OWL 2 Sprite Sheet_2
   - first:
-      213: 1691965650627806574
-    second: Owl 2 turn head anim_3
+      213: -2197059333046073831
+    second: OWL 2 Sprite Sheet_3
   - first:
-      213: -2064589790555428203
-    second: Owl 2 turn head anim_4
+      213: 2975568758781366565
+    second: OWL 2 Sprite Sheet_4
   - first:
-      213: 6036658159022689179
-    second: Owl 2 turn head anim_5
+      213: -6817724624623542673
+    second: OWL 2 Sprite Sheet_5
+  - first:
+      213: -7895124137969126321
+    second: OWL 2 Sprite Sheet_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Owl 2 turn head anim_0
+      name: OWL 2 Sprite Sheet_0
       rect:
         serializedVersion: 2
-        x: 130
-        y: 158
-        width: 1052
-        height: 778
+        x: 51
+        y: 921
+        width: 803
+        height: 1279
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,20 +138,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1d89400788b550f0800000000000000
-      internalID: -1128793241621525221
+      spriteID: d60f11066723f1560800000000000000
+      internalID: 7286598206108069997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owl 2 turn head anim_1
+      name: OWL 2 Sprite Sheet_1
       rect:
         serializedVersion: 2
-        x: 1507
-        y: 106
-        width: 1056
-        height: 853
+        x: 976
+        y: 1428
+        width: 1047
+        height: 772
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ce05d490eafc48e0800000000000000
-      internalID: -1707714316203651387
+      spriteID: d199fde357078f1f0800000000000000
+      internalID: -1010934467476350691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owl 2 turn head anim_2
+      name: OWL 2 Sprite Sheet_2
       rect:
         serializedVersion: 2
-        x: 2871
-        y: 106
-        width: 1012
-        height: 874
+        x: 2145
+        y: 874
+        width: 702
+        height: 1326
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a75ab1c598cb8c5e0800000000000000
-      internalID: -1889052745540065926
+      spriteID: 202415a187c512660800000000000000
+      internalID: 7359264937007464962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owl 2 turn head anim_3
+      name: OWL 2 Sprite Sheet_3
       rect:
         serializedVersion: 2
-        x: 4220
-        y: 158
-        width: 1120
-        height: 782
+        x: 50
+        y: 145
+        width: 671
+        height: 731
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6545d97bc11b7710800000000000000
-      internalID: 1691965650627806574
+      spriteID: 91605575d2a7281e0800000000000000
+      internalID: -2197059333046073831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owl 2 turn head anim_4
+      name: OWL 2 Sprite Sheet_4
       rect:
         serializedVersion: 2
-        x: 5650
-        y: 102
-        width: 1010
-        height: 874
+        x: 852
+        y: 25
+        width: 1135
+        height: 1356
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59aab0f268a1953e0800000000000000
-      internalID: -2064589790555428203
+      spriteID: 521d9e755085b4920800000000000000
+      internalID: 2975568758781366565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owl 2 turn head anim_5
+      name: OWL 2 Sprite Sheet_5
       rect:
         serializedVersion: 2
-        x: 7033
-        y: 106
-        width: 1056
-        height: 853
+        x: 2036
+        y: 0
+        width: 344
+        height: 560
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,8 +243,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9bc20fac9486c350800000000000000
-      internalID: 6036658159022689179
+      spriteID: f6e51e463939261a0800000000000000
+      internalID: -6817724624623542673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OWL 2 Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2511
+        y: 26
+        width: 336
+        height: 536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44fcba3d62ee6290800000000000000
+      internalID: -7895124137969126321
       vertices: []
       indices: 
       edges: []
@@ -249,7 +273,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1f6e1cae140398b4f9a01a759a3d969d
+    spriteID: 80c296e6f4b898546b7241a0a9b79f1c
     internalID: 0
     vertices: []
     indices: 

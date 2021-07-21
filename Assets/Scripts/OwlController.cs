@@ -6,6 +6,8 @@ public class OwlController : MonoBehaviour
 {
     [SerializeField]
     LevelManager levelManager;
+    [SerializeField]
+    OwlAnimation owlAnimator;
     bool down = true;
     Rigidbody rb;
     [SerializeField]
@@ -23,7 +25,7 @@ public class OwlController : MonoBehaviour
     AudioManager audioManager;
 
     Coroutine CoroutineVar;
-    bool moving = true;
+    bool moving = false;
     bool isAtBottom = false;
     bool isAtTop = false;
 
@@ -56,6 +58,7 @@ public class OwlController : MonoBehaviour
                 rb.velocity = -1 * speed * Vector3.up;
             }
             moving = true;
+            owlAnimator.StartFlying();
             //down = !down;
             //rb.velocity = speed * Vector3.up * (down ? -1 : 1);
         }
@@ -86,6 +89,7 @@ public class OwlController : MonoBehaviour
         //down = !down;
         //rb.velocity = speed * Vector3.up * (down ? -1 : 1);
         moving = true;
+        owlAnimator.StartFlying();
         audioManager.PlayAudioClip(moveAudioClip);
     }
     private void OnTriggerEnter(Collider other)
@@ -93,6 +97,7 @@ public class OwlController : MonoBehaviour
         Debug.Log("i fucking made it hoot");
         rb.velocity = Vector3.zero;
         moving = false;
+        owlAnimator.StopFlying();
         if (down)
         {
             isAtBottom = true;
