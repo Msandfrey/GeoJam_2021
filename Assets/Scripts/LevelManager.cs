@@ -44,26 +44,42 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
-        blocksLeft = blocks.Length;
-        Physics.gravity = new Vector3(0, gravity, 0);
-        Time.timeScale = 1;
+        InitializeScene();
     }
 
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
+    void InitializeScene()
+    {
+        //get the number of blocks in the level
+        GameObject[] blocks = GameObject.FindGameObjectsWithTag("Block");
+        blocksLeft = blocks.Length;
+        //make sure gravity is set proper like
+        Physics.gravity = new Vector3(0, gravity, 0);
+        //Time is normal 
+        Time.timeScale = 1;
+        //set score to 0
+        score = 0;
+        timer = 0;
+        //bools set to what they need to be
+        win = false;
+        peg = true;
+        unoReverseCard = false;
+        timerActive = false;
+        //object stuff
         sceneManager = FindObjectOfType<SceneChangeManager>();
 
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.PlayPeggleLevelMusic(levelNumber);
 
         HUDCont.SetBallCount(ballCount);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
     public void PlayerSwitch()
     {

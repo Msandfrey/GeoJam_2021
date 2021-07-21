@@ -7,6 +7,10 @@ public class Ball : MonoBehaviour
     LevelManager levelManager;
     Rigidbody rb;
     float constantSpeed;
+    bool timerOn = false;
+    float timer = 0f;
+    [SerializeField]
+    float allowedIdleTimeBeforeDeath = 4f;
 
     private void Start()
     {
@@ -18,6 +22,35 @@ public class Ball : MonoBehaviour
         if (!rb.useGravity)
         {
             rb.velocity = constantSpeed * (rb.velocity.normalized);
+        }
+        //if ball isn't moving start timer
+        if(rb.velocity == Vector3.zero && !timerOn)
+        {
+            //set timer
+            timerOn = true;
+            timer = allowedIdleTimeBeforeDeath;
+        }
+        //check timer on each call to see if ball is moving again
+        if(timerOn && timer > 0)
+        {
+            if(rb.velocity == Vector3.zero)
+            {
+                timer -= Time.deltaTime;
+            }
+            else
+            {
+                timerOn = false;
+            }
+        }else if(timerOn && timer <= 0)
+        {
+            if(rb.velocity == Vector3.zero)
+            {
+                levelManager.BallFalls(gameObject);
+            }
+            else
+            {
+                timerOn = false;
+            }
         }
         /***else
         {
