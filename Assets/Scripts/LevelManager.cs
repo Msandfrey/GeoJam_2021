@@ -99,6 +99,7 @@ public class LevelManager : MonoBehaviour
         {
             //if we are gonna switch to breakout with no balls, send owl back immediately
             owl.ReverseNoWait();
+            unoReverseCard = false;
         }
         //if no balls when switch to breakout swith to peggle and go back
     }
@@ -196,9 +197,11 @@ public class LevelManager : MonoBehaviour
             Lose();
             return;
         }
-        if(activeBalls.Count <= 0 && !peg && switchToPeggleOnNoBalls)
+        bool isPeggleShowing = unoReverseCard ? !peg : peg;
+        if(activeBalls.Count <= 0 && !isPeggleShowing && switchToPeggleOnNoBalls)
         {
-            ActivateSwitch(true);//return to peggle
+            //ActivateSwitch(true);//return to peggle
+            unoReverseCard = false;
             owl.ReverseNoWait();
         }
         //reset the launcher
