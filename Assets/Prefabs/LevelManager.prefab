@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6594329273837498685}
   m_Layer: 0
   m_Name: OwlBounds
-  m_TagString: Untagged
+  m_TagString: OwlBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,6 +289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballCount: 5
   gravity: -9.8
+  peg: 1
+  unoReverseCard: 0
   slowTimeOnSwitch: 0
   switchToPeggleOnNoBalls: 0
   switchLagTime: 0.2
@@ -297,6 +299,7 @@ MonoBehaviour:
   HUDCont: {fileID: 0}
   levelNumber: 1
   switchModeAudioClip: {fileID: 8300000, guid: efded59807fd44f1380d467519892780, type: 3}
+  owl: {fileID: 0}
   tempOwlThing: {fileID: 0}
 --- !u!1 &845328852208319216
 GameObject:

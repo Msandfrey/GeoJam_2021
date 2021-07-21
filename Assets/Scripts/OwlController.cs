@@ -94,21 +94,24 @@ public class OwlController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("i fucking made it hoot");
-        rb.velocity = Vector3.zero;
-        moving = false;
-        //owlAnimator.StopFlying();
-        if (down)
+        if (other.gameObject.tag.Equals("OwlBounds"))
         {
-            isAtBottom = true;
-            isAtTop = false;
+            Debug.Log("i fucking made it hoot");
+            rb.velocity = Vector3.zero;
+            moving = false;
+            //owlAnimator.StopFlying();
+            if (down)
+            {
+                isAtBottom = true;
+                isAtTop = false;
+            }
+            else
+            {
+                isAtTop = true;
+                isAtBottom = false;
+            }
+            CoroutineVar = StartCoroutine(WaitAndReverse());
+            levelManager.OwlSwitch(!down);
         }
-        else
-        {
-            isAtTop = true;
-            isAtBottom = false;
-        }
-        CoroutineVar = StartCoroutine(WaitAndReverse());
-        levelManager.OwlSwitch(!down);
     }
 }
