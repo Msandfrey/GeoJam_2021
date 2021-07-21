@@ -31,9 +31,10 @@ public class OwlController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = speed * Vector3.up * (down ? -1 : 1);
+        //rb.velocity = speed * Vector3.up * (down ? -1 : 1);
 
         audioManager = FindObjectOfType<AudioManager>();
+        StartCoroutine(StartDelayForOwl());
     }
 
     // Update is called once per frame
@@ -58,6 +59,13 @@ public class OwlController : MonoBehaviour
             //down = !down;
             //rb.velocity = speed * Vector3.up * (down ? -1 : 1);
         }
+    }
+    IEnumerator StartDelayForOwl()
+    {
+        //Debug.Log("wait");
+        //float owlWaitTime = Random.Range(minWaitTime, maxWaitTime);
+        yield return new WaitForSeconds(maxWaitTime);
+        rb.velocity = -1 * speed * Vector3.up;
     }
     IEnumerator WaitAndReverse()
     {
@@ -96,6 +104,6 @@ public class OwlController : MonoBehaviour
             isAtBottom = false;
         }
         CoroutineVar = StartCoroutine(WaitAndReverse());
-        levelManager.ActivateSwitch(!down, down);
+        levelManager.OwlSwitch(!down);
     }
 }

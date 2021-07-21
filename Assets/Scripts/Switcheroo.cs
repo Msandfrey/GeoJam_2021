@@ -23,7 +23,7 @@ public class Switcheroo : MonoBehaviour
         if (collision.gameObject.tag.Equals("Ball"))
         {
             collision.gameObject.GetComponent<Rigidbody>().useGravity = false;//need to change it so that all balls have no gravity?
-            levelManager.ActivateSwitch();
+            levelManager.PlayerSwitch();
             if (doesSwitchHide)
             {
                 gameObject.SetActive(false);

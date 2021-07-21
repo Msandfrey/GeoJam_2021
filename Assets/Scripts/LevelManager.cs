@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     float gravity = -9.8f;
     bool win = false;
     bool peg = true;
+    bool unoReverseCard = false;
     bool timerActive = false;
     [SerializeField]
     bool slowTimeOnSwitch = false;
@@ -64,20 +65,20 @@ public class LevelManager : MonoBehaviour
     void Update()
     {
     }
-    public void ActivateSwitch(bool peggle = false, bool breakout = false)//for now it just does this simple thing
+    public void PlayerSwitch()
     {
-        //if not specified it will switch to opposite (covers both false and true)
-        if (peggle == breakout)
-        {
-            peg = !peg;
-            owl.ReverseNoWait();
-        }
-        else//if they are not the same, peggle value can decide our fate
-        {
-            peg = peggle;
-        }
+        unoReverseCard = !unoReverseCard;
+        ActivateSwitch(!peg);
+    }
+    public void OwlSwitch(bool peggle)//for now it just does this simple thing
+    {
+        peg = unoReverseCard ? !peggle : peggle;
+        ActivateSwitch(peg);
+    }
+    void ActivateSwitch(bool peggle)
+    {
         //if peg show launcher hide bar
-        if (peg)
+        if (peggle)
         {
             Launcher.gameObject.SetActive(true);
             breakoutBar.SetActive(false);
@@ -112,6 +113,7 @@ public class LevelManager : MonoBehaviour
             audioManager.PlayBrickBreakerLevelMusic(levelNumber);
         }
         audioManager.PlayAudioClip(switchModeAudioClip);
+
     }
     public IEnumerator InitiateSwitchToTheOtherSide()
     {
@@ -169,7 +171,7 @@ public class LevelManager : MonoBehaviour
         }
         if(activeBalls.Count <= 0 && !peg && switchToPeggleOnNoBalls)
         {
-            ActivateSwitch();
+            ActivateSwitch(true);//return to peggle
             owl.ReverseNoWait();
         }
         //reset the launcher
