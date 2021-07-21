@@ -140,6 +140,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1147179749, guid: 896d8ea80c7cad142be5a4f0a51e8f67, type: 3}
+      propertyPath: ballAngleOffset
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147179749, guid: 896d8ea80c7cad142be5a4f0a51e8f67, type: 3}
+      propertyPath: initialBallSpeed
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 7354795599308440678, guid: 896d8ea80c7cad142be5a4f0a51e8f67, type: 3}
       propertyPath: m_Name
       value: Paddle

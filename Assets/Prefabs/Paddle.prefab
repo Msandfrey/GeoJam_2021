@@ -108,3 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7be86d3eaab111438c2373e43a03bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialBallSpeed: 150
+  ballAngleOffset: 300
