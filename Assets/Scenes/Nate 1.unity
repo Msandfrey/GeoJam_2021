@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45122802, g: 0.5009494, b: 0.5735671, a: 1}
+  m_IndirectSpecularColor: {r: 0.45122796, g: 0.5009491, b: 0.57356656, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6249,7 +6249,7 @@ GameObject:
   - component: {fileID: 5780640144348896957}
   m_Layer: 0
   m_Name: OwlBounds
-  m_TagString: Untagged
+  m_TagString: OwlBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
