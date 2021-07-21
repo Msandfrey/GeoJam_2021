@@ -90,6 +90,12 @@ public class LevelManager : MonoBehaviour
     {
         peg = unoReverseCard ? !peggle : peggle;
         ActivateSwitch(peg);
+        if(!peg && activeBalls.Count <= 0)
+        {
+            //if we are gonna switch to breakout with no balls, send owl back immediately
+            owl.ReverseNoWait();
+        }
+        //if no balls when switch to breakout swith to peggle and go back
     }
     void ActivateSwitch(bool peggle)
     {

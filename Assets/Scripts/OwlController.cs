@@ -41,7 +41,7 @@ public class OwlController : MonoBehaviour
     void Update()
     {
     }
-    public void ReverseNoWait()
+    public void ReverseNoWait()//maybe add var to tell when to increase his speed
     {
         if (!moving)
         {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45122802, g: 0.5009494, b: 0.5735671, a: 1}
+  m_IndirectSpecularColor: {r: 0.45122796, g: 0.5009491, b: 0.57356656, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3843,6 +3843,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7be86d3eaab111438c2373e43a03bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialBallSpeed: 0
+  ballAngleOffset: 0
 --- !u!1001 &926382494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4225,6 +4227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7be86d3eaab111438c2373e43a03bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialBallSpeed: 0
+  ballAngleOffset: 0
 --- !u!65 &1105507495
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6546,6 +6550,8 @@ MonoBehaviour:
   breakoutBar: {fileID: 7354795599266767399}
   HUDCont: {fileID: 898366742}
   levelNumber: 1
+  switchModeAudioClip: {fileID: 0}
+  owl: {fileID: 625163903489694254}
   tempOwlThing: {fileID: 2041541742462339460}
 --- !u!4 &1738966964
 Transform:
@@ -7740,8 +7746,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 1738966963}
-  speed: 1
-  owlWaitTime: 3
+  speed: 5
+  minWaitTime: 8.46
+  maxWaitTime: 10.44
+  moveAudioClip: {fileID: 0}
 --- !u!4 &625163903489694255
 Transform:
   m_ObjectHideFlags: 0
