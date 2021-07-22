@@ -41,8 +41,12 @@ public class LevelManager : MonoBehaviour
     AudioClip switchModeAudioClip;
     [SerializeField]
     OwlController owl;
-    // [SerializeField]
-    // int hitStreak;
+    [SerializeField]
+    float hitStreakTimeTheshold1;
+    [SerializeField]
+    float hitStreakTimeTheshold2;
+    [SerializeField]
+    float hitStreakTimeTheshold3;
     [SerializeField]
     int hitStreakMultiplier1;
     [SerializeField]
@@ -227,15 +231,15 @@ public class LevelManager : MonoBehaviour
         // determine if  hitStreak is high (a.k.a 1), mid (a.k.a. 2), or low (a.k.a 3)
         // depending on time lapse (in sec)
         int hitStreak = 0;
-        if (time <= 3.0f)
+        if (time <= hitStreakTimeTheshold1)
         {
             hitStreak = 1;
         }
-        else if (time <= 5.0f && time >= 3f)
+        else if (time <= hitStreakMultiplier2 && time >= hitStreakMultiplier1)
         {
             hitStreak = 2;
         }
-        else if (time >= 10.0f)
+        else if (time >= hitStreakTimeTheshold3)
         {
             hitStreak = 3;
         }
