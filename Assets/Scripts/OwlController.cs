@@ -8,6 +8,7 @@ public class OwlController : MonoBehaviour
     LevelManager levelManager;
     [SerializeField]
     OwlAnimation owlAnimator;
+    [SerializeField] Animator animator;
     bool down = true;
     Rigidbody rb;
     [SerializeField]
@@ -37,6 +38,8 @@ public class OwlController : MonoBehaviour
 
         audioManager = FindObjectOfType<AudioManager>();
         StartCoroutine(StartDelayForOwl());
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -67,7 +70,12 @@ public class OwlController : MonoBehaviour
     {
         //Debug.Log("wait");
         //float owlWaitTime = Random.Range(minWaitTime, maxWaitTime);
+        
+        // owl idle for 5 sec
+        // maxWaitTime = 5.0f;
+        // animator.SetBool("Idle", true);
         yield return new WaitForSeconds(maxWaitTime);
+        // animator.SetBool("Idle", false);
         rb.velocity = -1 * speed * Vector3.up;
     }
     IEnumerator WaitAndReverse()
