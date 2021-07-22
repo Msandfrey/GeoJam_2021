@@ -41,6 +41,8 @@ public class LevelManager : MonoBehaviour
     AudioClip switchModeAudioClip;
     [SerializeField]
     OwlController owl;
+    [SerializeField]
+    int hitStreak;
 
 
     //temp stuff for now
@@ -157,7 +159,7 @@ public class LevelManager : MonoBehaviour
         if (timerActive)
         {
             timer += Time.deltaTime; // start timer to measure time lapse of subsequent block hits
-            int hitStreak = CalcHitStreak(timer); // based on time, it's either 1, 2, 3
+            // int hitStreak = CalcHitStreak(timer); // based on time, it's either 1, 2, 3
             int bonus = CalcHitBonus(hitStreak);// based on hitstreak, it's either, 10, 5, 1
             // Debug.Log("Time: " + timer);
             // Debug.Log("Hit streak: " + hitStreak);
