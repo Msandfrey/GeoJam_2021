@@ -7,8 +7,10 @@ public class OwlController : MonoBehaviour
     [SerializeField]
     LevelManager levelManager;
     [SerializeField]
-    OwlAnimation owlAnimator;
-    [SerializeField] Animator animator;
+    OwlAnimation owlWingAnimator;
+    [SerializeField]
+    OwlAnimation owlHeadAnimator;
+    //[SerializeField] Animator animator;
     bool down = true;
     Rigidbody rb;
     [SerializeField]
@@ -39,7 +41,7 @@ public class OwlController : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         StartCoroutine(StartDelayForOwl());
 
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -50,7 +52,10 @@ public class OwlController : MonoBehaviour
     {
         if (!moving)
         {
-            StopCoroutine(CoroutineVar);
+            if (CoroutineVar != null)
+            {
+                StopCoroutine(CoroutineVar);
+            }
             if (isAtBottom)
             {
                 down = false;
@@ -61,7 +66,7 @@ public class OwlController : MonoBehaviour
                 rb.velocity = -1 * speed * Vector3.up;
             }
             moving = true;
-            owlAnimator.StartFlying();
+            owlWingAnimator.StartFlying();
             //down = !down;
             //rb.velocity = speed * Vector3.up * (down ? -1 : 1);
         }
@@ -78,7 +83,7 @@ public class OwlController : MonoBehaviour
         // animator.SetBool("Idle", false);
         rb.velocity = -1 * speed * Vector3.up;
         moving = true;
-        owlAnimator.StartFlying();
+        owlWingAnimator.StartFlying();
     }
     IEnumerator WaitAndReverse()
     {
@@ -99,7 +104,7 @@ public class OwlController : MonoBehaviour
         //down = !down;
         //rb.velocity = speed * Vector3.up * (down ? -1 : 1);
         moving = true;
-        owlAnimator.StartFlying();
+        owlWingAnimator.StartFlying();
         audioManager.PlayAudioClip(moveAudioClip);
     }
     private void OnTriggerEnter(Collider other)
@@ -109,7 +114,7 @@ public class OwlController : MonoBehaviour
             Debug.Log("i fucking made it hoot");
             rb.velocity = Vector3.zero;
             moving = false;
-            owlAnimator.StopFlying();
+            owlWingAnimator.StopFlying();
             if (down)
             {
                 isAtBottom = true;

@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 852957eb6c11bb44b94e93b6090e2324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 3108038687280825181}
+  wingAnim: {fileID: 3108038687280825181}
+  headAnim: {fileID: 0}
   owlspeed: 0
   owl: {fileID: 3108038687066857912}
   flapSpeed: 1
@@ -65,7 +66,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
-  owlAnimator: {fileID: 3108038687066857918}
+  owlWingAnimator: {fileID: 3108038687066857918}
+  owlHeadAnimator: {fileID: 0}
   speed: 5
   minWaitTime: 1.5
   maxWaitTime: 1.5

@@ -5,7 +5,9 @@ using UnityEngine;
 public class OwlAnimation : MonoBehaviour
 {
     [SerializeField]
-    Animator anim;
+    Animator wingAnim;
+    [SerializeField]
+    Animator headAnim;
     [SerializeField]
     float owlspeed;
     [SerializeField]
@@ -18,22 +20,22 @@ public class OwlAnimation : MonoBehaviour
     void Start()
     {
         //anim.StopPlayback();
-        owlspeed = anim.speed;
+        owlspeed = wingAnim.speed;
         owlspeed = 0;
-        anim.speed = 0;
+        wingAnim.speed = 0;
     }
     public void StartFlying()
     {
-        anim.StopPlayback();
-        anim.speed = 1;
+        wingAnim.StopPlayback();
+        wingAnim.speed = 1;
         owlspeed = 1;
-        anim.Play("OwlAnimationFlight1");
+        wingAnim.Play("OwlAnimationFlight1");
     }
     public void StopFlying()
     {
-        anim.StopPlayback();
-        anim.speed = 0;
+        wingAnim.StopPlayback();
+        wingAnim.speed = 0;
         owlspeed = 0;
-        anim.Play("OwlIdle");
+        wingAnim.Play("OwlIdle");
     }
 }
