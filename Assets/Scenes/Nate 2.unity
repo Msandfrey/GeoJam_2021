@@ -5481,9 +5481,15 @@ MonoBehaviour:
   Launcher: {fileID: 3637409114274144085}
   breakoutBar: {fileID: 7354795599266767399}
   HUDCont: {fileID: 898366742}
-  levelNumber: 1
+  levelNumber: 2
   switchModeAudioClip: {fileID: 0}
   owl: {fileID: 236249293}
+  hitStreakTimeThreshold1: 0
+  hitStreakTimeThreshold2: 0
+  hitStreakTimeThreshold3: 0
+  hitStreakMultiplier1: 0
+  hitStreakMultiplier2: 0
+  hitStreakMultiplier3: 0
   tempOwlThing: {fileID: 2041541742462339460}
 --- !u!4 &1738966964
 Transform:
