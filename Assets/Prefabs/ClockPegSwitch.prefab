@@ -420,4 +420,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae57b315c7a5cd14cabc5ed3bc7f66bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doesSwitchHide: 1
+  doesSwitchHide: 0
