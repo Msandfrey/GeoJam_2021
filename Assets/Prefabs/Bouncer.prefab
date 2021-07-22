@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 1312998916257712413}
   - component: {fileID: 4207718221016640051}
   m_Layer: 0
-  m_Name: Bouncer_2
+  m_Name: Bouncer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,7 +273,7 @@ Transform:
   m_GameObject: {fileID: 6067066210172537881}
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_LocalScale: {x: 40, y: 30, z: 40}
   m_Children:
   - {fileID: 5054080071890309220}
   - {fileID: 7566174443716709603}
@@ -290,7 +290,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6067066210172537881}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a5b868365db1b4f46b3b881717f4ff7e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
