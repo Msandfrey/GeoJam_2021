@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -3171944347224120295}
   - component: {fileID: -8176572648734786166}
   m_Layer: 0
-  m_Name: Ball_2
+  m_Name: Ball
   m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,3 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8b2ecf898e58b43b31f8e8fe5a7699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constantSpeed: 10
+  allowedIdleTimeBeforeDeath: 4
+  keepSpeedSameForAllBalls: 1
+  GottaSwitchModes: 0
+  DoesBallSwitchOnCollision: 1

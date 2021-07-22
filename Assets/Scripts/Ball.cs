@@ -6,11 +6,14 @@ public class Ball : MonoBehaviour
 {
     LevelManager levelManager;
     Rigidbody rb;
-    float constantSpeed;
+    [SerializeField]
+    float constantSpeed = 20f;
     bool timerOn = false;
     float timer = 0f;
     [SerializeField]
     float allowedIdleTimeBeforeDeath = 4f;
+    [SerializeField]
+    bool keepSpeedSameForAllBalls = false;
     public bool GottaSwitchModes;
     public bool DoesBallSwitchOnCollision = true;
     bool GravityOn = true;
@@ -74,7 +77,10 @@ public class Ball : MonoBehaviour
     }
     public void ToBreakout()
     {
-        constantSpeed = rb.velocity.magnitude;
+        if (!keepSpeedSameForAllBalls)
+        {
+            constantSpeed = rb.velocity.magnitude;
+        }
         if (DoesBallSwitchOnCollision)
         {
             GottaSwitchModes = true;
