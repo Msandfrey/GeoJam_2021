@@ -45,11 +45,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     OwlController owl;
     [SerializeField]
-    float hitStreakTimeTheshold1;
+    float hitStreakTimeThreshold1;
     [SerializeField]
-    float hitStreakTimeTheshold2;
+    float hitStreakTimeThreshold2;
     [SerializeField]
-    float hitStreakTimeTheshold3;
+    float hitStreakTimeThreshold3;
     [SerializeField]
     int hitStreakMultiplier1;
     [SerializeField]
@@ -267,15 +267,15 @@ public class LevelManager : MonoBehaviour
         // determine if  hitStreak is high (a.k.a 1), mid (a.k.a. 2), or low (a.k.a 3)
         // depending on time lapse (in sec)
         int hitStreak = 0;
-        if (time <= hitStreakTimeTheshold1)
+        if (time <= hitStreakTimeThreshold1)
         {
             hitStreak = 1;
         }
-        else if (time <= hitStreakMultiplier2 && time >= hitStreakMultiplier1)
+        else if (time <= hitStreakTimeThreshold2 && time > hitStreakTimeThreshold1)
         {
             hitStreak = 2;
         }
-        else if (time >= hitStreakTimeTheshold3)
+        else if (time <= hitStreakTimeThreshold3 && time > hitStreakTimeThreshold2)
         {
             hitStreak = 3;
         }
