@@ -6336,7 +6336,7 @@ GameObject:
   - component: {fileID: 5780640144348896957}
   m_Layer: 0
   m_Name: OwlBounds
-  m_TagString: Untagged
+  m_TagString: OwlBounds
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
