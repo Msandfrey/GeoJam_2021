@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
-  points: 3
+  points: 20
 --- !u!114 &798034290651360390
 MonoBehaviour:
   m_ObjectHideFlags: 0

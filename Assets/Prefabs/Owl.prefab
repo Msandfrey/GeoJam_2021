@@ -68,9 +68,9 @@ MonoBehaviour:
   levelManager: {fileID: 0}
   owlWingAnimator: {fileID: 3108038687066857918}
   owlHeadAnimator: {fileID: 0}
-  speed: 5
-  minWaitTime: 1.5
-  maxWaitTime: 1.5
+  speed: 7
+  minWaitTime: 5
+  maxWaitTime: 10
   moveAudioClip: {fileID: 8300000, guid: 980df5f3b85de46e0aba25eb676f7169, type: 3}
 --- !u!54 &8228171601005117718
 Rigidbody:
