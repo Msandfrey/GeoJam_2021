@@ -27,7 +27,10 @@ public class LevelManager : MonoBehaviour
     float switchLagTime = .2f;
     List<GameObject> activeBalls = new List<GameObject>();
     AudioManager audioManager;
-
+    [SerializeField]
+    float ballDropSpeed = 10f;
+    [SerializeField]
+    Transform BreakoutSpawnPoint;
     SceneChangeManager sceneManager;
     [SerializeField]
     BallController Launcher;
@@ -53,8 +56,8 @@ public class LevelManager : MonoBehaviour
     int hitStreakMultiplier2;
     [SerializeField]
     int hitStreakMultiplier3;
-
-
+    [SerializeField]
+    GameObject prefabBall;
     //temp stuff for now
     public GameObject tempOwlThing;
 
@@ -109,9 +112,20 @@ public class LevelManager : MonoBehaviour
         ActivateSwitch(isPeggleShown);
         if(!isPeggleShown && activeBalls.Count <= 0)
         {
-            //if we are gonna switch to breakout with no balls, send owl back immediately
-            owl.ReverseNoWait();
-            unoReverseCard = false;
+            if (switchToPeggleOnNoBalls)
+            {
+                //ActivateSwitch(true);//return to peggle
+                unoReverseCard = false;
+                owl.ReverseNoWait();
+            }
+            else
+            {
+                //drop in a blall
+                DroppingALoadBall();
+            }
+            ////if we are gonna switch to breakout with no balls, send owl back immediately
+            //owl.ReverseNoWait();
+            //unoReverseCard = false;
         }
         //if no balls when switch to breakout swith to peggle and go back
     }
@@ -212,12 +226,34 @@ public class LevelManager : MonoBehaviour
         bool isPeggleShowing = unoReverseCard ? !peg : peg;
         if(activeBalls.Count <= 0 && !isPeggleShowing && switchToPeggleOnNoBalls)
         {
-            //ActivateSwitch(true);//return to peggle
-            unoReverseCard = false;
-            owl.ReverseNoWait();
+            //if (switchToPeggleOnNoBalls)
+            //{
+                //ActivateSwitch(true);//return to peggle
+                unoReverseCard = false;
+                owl.ReverseNoWait();
+            //}
+            //else
+            //{
+                //drop in a blall
+                //DroppingALoadBall();
+            //}
         }
         //reset the launcher
         //Launcher.ResetLauncher();
+    }
+    void DroppingALoadBall()
+    {
+        //this is the same as Shoot in BallController
+        BallDecrement();
+        GameObject createBall = Instantiate(prefabBall, BreakoutSpawnPoint.position, Quaternion.identity);
+        Rigidbody rbBall = createBall.GetComponent<Rigidbody>();
+        rbBall.useGravity = false;
+        Vector3 direction = (Vector3.left + Vector3.down);
+        direction.Normalize();
+
+        rbBall.velocity = direction * ballDropSpeed;
+        AddActiveBall(createBall);
+
     }
     void AddScore(int blockPoints, int bonusMultiplier)//add paramtere later
     {
