@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wingAnim: {fileID: 3108038687280825181}
-  headAnim: {fileID: 0}
+  headAnim: {fileID: 3697696032415131899}
   owlspeed: 0
   owl: {fileID: 3108038687066857912}
   flapSpeed: 1
@@ -304,6 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3108038687577594725}
   - component: {fileID: 3108038687577594730}
+  - component: {fileID: 3697696032415131899}
   m_Layer: 0
   m_Name: Owl 1 head
   m_TagString: Untagged
@@ -319,7 +320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3108038687577594731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.29424667, y: -3.4277382, z: 0}
+  m_LocalPosition: {x: 1.05, y: 1.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3108038687066857913}
@@ -365,7 +366,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 2f94e434bf98d2646ad68dc78e2bc670, type: 3}
+  m_Sprite: {fileID: -4460151467619675423, guid: cce4261217aaf944e977a265d08113f0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -376,6 +377,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3697696032415131899
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3108038687577594731}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ab0bdc4cd8e5389489d9106a3cd9ef20, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3108038687626114257
 GameObject:
   m_ObjectHideFlags: 0
