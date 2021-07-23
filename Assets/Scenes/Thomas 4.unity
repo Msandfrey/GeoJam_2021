@@ -666,7 +666,7 @@ PrefabInstance:
     - target: {fileID: 845328851749496883, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
       propertyPath: tempOwlThing
       value: 
-      objectReference: {fileID: 458509192}
+      objectReference: {fileID: 0}
     - target: {fileID: 845328851749496883, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
       propertyPath: tempRespawnPoint
       value: 
@@ -734,14 +734,6 @@ PrefabInstance:
     - target: {fileID: 845328852576125474, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
       propertyPath: m_Size.y
       value: 2.6187305
-      objectReference: {fileID: 0}
-    - target: {fileID: 845328852576125474, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
-      propertyPath: m_Center.x
-      value: 0.07999992
-      objectReference: {fileID: 0}
-    - target: {fileID: 845328852576125474, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
-      propertyPath: m_Center.y
-      value: -17.405964
       objectReference: {fileID: 0}
     - target: {fileID: 845328852576125475, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
       propertyPath: levelManager
@@ -837,11 +829,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364a8499cc3d40345b4cadba00708eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &458509192 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1724374501956118020, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
-  m_PrefabInstance: {fileID: 458509190}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &467541002
 PrefabInstance:
   m_ObjectHideFlags: 0
