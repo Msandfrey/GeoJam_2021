@@ -16,6 +16,8 @@ public class OwlController : MonoBehaviour
     [SerializeField]
     float speed = 10;
     [SerializeField]
+    float quickReturnSpeed = 10;
+    [SerializeField]
     [Tooltip("Sets the minimum time for the owl to wait before moving. If this is greater than Max Wait Time, then the values are automatically swapped.")]
     [Range(0.0f, 15.0f)]
     float minWaitTime = 1.5f;
@@ -59,11 +61,11 @@ public class OwlController : MonoBehaviour
             if (isAtBottom)
             {
                 down = false;
-                rb.velocity = speed * Vector3.up;
+                rb.velocity = quickReturnSpeed * Vector3.up;
             }else if (isAtTop)
             {
                 down = true;
-                rb.velocity = -1 * speed * Vector3.up;
+                rb.velocity = -1 * quickReturnSpeed * Vector3.up;
             }
             moving = true;
             owlWingAnimator.StartFlying();
