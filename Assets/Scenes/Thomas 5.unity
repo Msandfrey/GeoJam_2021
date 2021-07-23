@@ -2041,6 +2041,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1011181367}
     - target: {fileID: 845328851749496883, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
+      propertyPath: ballCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 845328851749496883, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
       propertyPath: prefabBall
       value: 
       objectReference: {fileID: 3290766299175084929, guid: b1393992c70a93d438be057ab87ff4b6, type: 3}
