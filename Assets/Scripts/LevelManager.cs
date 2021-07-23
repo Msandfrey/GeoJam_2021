@@ -72,6 +72,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HUDCont.SetBallCount(ballCount);
     }
 
     // Update is called once per frame
@@ -113,7 +114,6 @@ public class LevelManager : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.PlayPeggleLevelMusic(levelNumber);
 
-        HUDCont.SetBallCount(ballCount);
     }
     public void PlayerSwitch()
     {
