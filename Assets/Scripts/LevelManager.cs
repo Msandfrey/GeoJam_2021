@@ -117,6 +117,11 @@ public class LevelManager : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.PlayPeggleLevelMusic(levelNumber);
         scoreUntilBall = gainBallScoreValue;
+
+        if (HUDCont == null)
+        {
+            HUDCont = FindObjectOfType<HUDController>();
+        }
     }
     public void PlayerSwitch()
     {
