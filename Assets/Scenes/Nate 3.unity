@@ -4973,6 +4973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TwoBladedSpinnerParent (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7336543147680781991, guid: 6cfbdb7c476ebd844b500c3d912d5b70, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cfbdb7c476ebd844b500c3d912d5b70, type: 3}
 --- !u!4 &679558492 stripped
@@ -10207,6 +10211,10 @@ PrefabInstance:
     - target: {fileID: 7336543147680781991, guid: 6cfbdb7c476ebd844b500c3d912d5b70, type: 3}
       propertyPath: m_Name
       value: TwoBladedSpinnerParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7336543147680781991, guid: 6cfbdb7c476ebd844b500c3d912d5b70, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cfbdb7c476ebd844b500c3d912d5b70, type: 3}
