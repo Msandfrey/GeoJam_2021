@@ -294,18 +294,19 @@ MonoBehaviour:
   slowTimeOnSwitch: 0
   switchToPeggleOnNoBalls: 0
   switchLagTime: 0.2
+  ballDropSpeed: 10
+  BreakoutSpawnPoint: {fileID: 0}
   Launcher: {fileID: 0}
   breakoutBar: {fileID: 0}
   HUDCont: {fileID: 0}
   levelNumber: 1
   switchModeAudioClip: {fileID: 8300000, guid: efded59807fd44f1380d467519892780, type: 3}
   owl: {fileID: 0}
-  hitStreakTimeThreshold1: 1
-  hitStreakTimeThreshold2: 5
-  hitStreakTimeThreshold3: 999
-  hitStreakMultiplier1: 10
-  hitStreakMultiplier2: 5
-  hitStreakMultiplier3: 1
+  hitStreakMultiplier1: 1
+  hitStreakMultiplier2: 3
+  hitStreakMultiplier3: 5
+  hitStreak: 0
+  prefabBall: {fileID: 3290766299175084929, guid: b1393992c70a93d438be057ab87ff4b6, type: 3}
   tempOwlThing: {fileID: 0}
 --- !u!1 &845328852208319216
 GameObject:

@@ -44,18 +44,21 @@ public class LevelManager : MonoBehaviour
     AudioClip switchModeAudioClip;
     [SerializeField]
     OwlController owl;
+    // [SerializeField]
+    // float hitStreakTimeThreshold1;
+    // [SerializeField]
+    // float hitStreakTimeThreshold2;
+    // [SerializeField]
+    // float hitStreakTimeThreshold3;
     [SerializeField]
-    float hitStreakTimeThreshold1;
+    int hitStreakMultiplier1 = 1;
     [SerializeField]
-    float hitStreakTimeThreshold2;
+    int hitStreakMultiplier2 = 3;
     [SerializeField]
-    float hitStreakTimeThreshold3;
-    [SerializeField]
-    int hitStreakMultiplier1;
-    [SerializeField]
-    int hitStreakMultiplier2;
-    [SerializeField]
-    int hitStreakMultiplier3;
+    int hitStreakMultiplier3 = 5;
+    [SerializeField] 
+    int hitStreak;
+
     [SerializeField]
     GameObject prefabBall;
     //temp stuff for now
@@ -74,6 +77,18 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(timerActive)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 8.0f)
+            {
+
+                Debug.Log("TIMER RESET");
+                hitStreak = 0;
+                timer = 0f;
+                timerActive = false;
+            }
+        }
     }
     void InitializeScene()
     {
@@ -180,18 +195,13 @@ public class LevelManager : MonoBehaviour
     {
         blocksLeft--;
         timerActive = true;
-        if (timerActive)
-        {
-            timer += Time.deltaTime; // start timer to measure time lapse of subsequent block hits
-            int hitStreak = CalcHitStreak(timer); // based on time, it's either 1, 2, 3
-            int bonus = CalcHitBonus(hitStreak);// based on hitstreak, it's either, 10, 5, 1
-            // Debug.Log("Time: " + timer);
-            // Debug.Log("Hit streak: " + hitStreak);
-            // Debug.Log("Bonus: " + bonus);
+        timer = 0;
+        hitStreak++;
+        Debug.Log("hit streaks is now: " + hitStreak);
+        int bonus = CalcHitBonus(hitStreak); 
+        Debug.Log("Bonus: " + bonus);
 
-            AddScore(points,bonus);
-            timerActive = false;
-        }
+        AddScore(points,bonus);
 
         if(blocksLeft <= 0)
         {
@@ -262,34 +272,19 @@ public class LevelManager : MonoBehaviour
         HUDCont.SetScore(score);
     }
 
-    int CalcHitStreak(float time)
-    {
-        // determine if  hitStreak is high (a.k.a 1), mid (a.k.a. 2), or low (a.k.a 3)
-        // depending on time lapse (in sec)
-        int hitStreak = 0;
-        if (time <= hitStreakTimeThreshold1)
-        {
-            hitStreak = 1;
-        }
-        else if (time <= hitStreakTimeThreshold2 && time > hitStreakTimeThreshold1)
-        {
-            hitStreak = 2;
-        }
-        else if (time <= hitStreakTimeThreshold3 && time > hitStreakTimeThreshold2)
-        {
-            hitStreak = 3;
-        }
-        return hitStreak;
-    }
-
     int CalcHitBonus(int hitStreak)
     {
-        switch (hitStreak)
+        if (hitStreak <= 2)
         {
-            default:
-            case 1: return hitStreakMultiplier1;
-            case 2: return hitStreakMultiplier2;
-            case 3: return hitStreakMultiplier3;
+            return hitStreakMultiplier1;
+        }
+        else if (hitStreak <= 6)
+        {
+            return hitStreakMultiplier2;
+        }
+        else 
+        {
+            return hitStreakMultiplier3;
         }
     }
     public void Win()
