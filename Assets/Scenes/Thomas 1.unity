@@ -3132,7 +3132,7 @@ PrefabInstance:
       objectReference: {fileID: 1950411181}
     - target: {fileID: 845328851749496883, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
       propertyPath: ballCount
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 845328851749496883, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
       propertyPath: prefabBall
@@ -3154,18 +3154,6 @@ PrefabInstance:
       propertyPath: BreakoutSpawnPoint
       value: 
       objectReference: {fileID: 703209356}
-    - target: {fileID: 845328851749496883, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
-      propertyPath: hitStreakMultiplier1
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 845328851749496883, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
-      propertyPath: hitStreakMultiplier2
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 845328851749496883, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
-      propertyPath: hitStreakMultiplier3
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 845328851749496884, guid: 58453b3a396cb4e45bcdd86703216b03, type: 3}
       propertyPath: m_RootOrder
       value: 6
