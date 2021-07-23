@@ -6,7 +6,10 @@ public class BallLauncher : MonoBehaviour
 {
     void Update()
     {
-        RotateLauncher();
+        if(Time.timeScale != 0)
+        {
+            RotateLauncher();
+        }
     }
 
     void OnMouseOver()

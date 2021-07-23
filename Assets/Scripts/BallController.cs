@@ -36,7 +36,7 @@ public class BallController : MonoBehaviour
     void Shoot()
     {
         //first check if there are balls to fire
-        if (levelManager.GetRemainingBalls() > 0)
+        if (levelManager.GetRemainingBalls() > 0 && Time.timeScale != 0)
         {
             levelManager.BallDecrement();
             GameObject createBall = Instantiate(prefabBall, shootingPoint.position, shootingPoint.rotation);
