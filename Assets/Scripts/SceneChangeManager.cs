@@ -66,4 +66,11 @@ public class SceneChangeManager : MonoBehaviour
 
         return levelToBuildIndex;
     }
+
+    public int GetCurrentLevel()
+    {
+        // We ignore the splash screen/main menu screens when determing the level number
+        // We add 1 since the scene list is zero based, but our levels are 1 based
+        return SceneManager.GetActiveScene().buildIndex - firstLevelSceneIndex + 1;
+    }
 }

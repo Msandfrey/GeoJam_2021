@@ -14,6 +14,9 @@ public class AudioManager : MonoBehaviour
     [Tooltip("Ordered list of background brick breaker music for levels. First item in the list is played for level 1")]
     public List<AudioClip> levelBrickBreakerMusicClips;
 
+    private AudioClip activePeggleMusicClip;
+    private AudioClip activeBrickBreakerMusicClip;
+
     private void Start()
     {
         PlayerSettings playerSettings = FindObjectOfType<PlayerSettings>();
@@ -59,34 +62,39 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBrickBreakerLevelMusic(int level)
     {
-        // levels are 1-based, but our List of background music is zero-based
-        int levelIndex = level - 1;
-
-        if (levelIndex >= levelBrickBreakerMusicClips.Count)
+        if (activePeggleMusicClip == null)
         {
-            Debug.Log(string.Format("Unable to find brick breaker music for level {0} - defaulting to music clip for level 1.", level));
-            levelIndex = 0;
+            // levels are 1-based, but our List of background music is zero-based
+            int clipIndex = level - 1;
+
+            if (clipIndex >= levelBrickBreakerMusicClips.Count)
+            {
+                clipIndex = Random.Range(0, levelBrickBreakerMusicClips.Count - 1);
+            }
+
+            activePeggleMusicClip = levelBrickBreakerMusicClips[clipIndex];
         }
 
-        AudioClip clip = levelBrickBreakerMusicClips[levelIndex];
 
-        PlayBackgroundMusic(clip);
+        PlayBackgroundMusic(activePeggleMusicClip);
     }
 
     public void PlayPeggleLevelMusic(int level)
     {
-        // levels are 1-based, but our List of background music is zero-based
-        int levelIndex = level - 1;
-
-        if (levelIndex >= levelBrickBreakerMusicClips.Count)
+        if (activeBrickBreakerMusicClip == null)
         {
-            Debug.Log(string.Format("Unable to find peggle music for level {0} - defaulting to music clip for level 1.", level));
-            levelIndex = 0;
+            // levels are 1-based, but our List of background music is zero-based
+            int clipIndex = level - 1;
+
+            if (clipIndex >= levelPeggleMusicClips.Count)
+            {
+                clipIndex = Random.Range(0, levelPeggleMusicClips.Count - 1);
+            }
+
+            activeBrickBreakerMusicClip = levelPeggleMusicClips[clipIndex];
         }
 
-        AudioClip clip = levelPeggleMusicClips[levelIndex];
-
-        PlayBackgroundMusic(clip);
+        PlayBackgroundMusic(activeBrickBreakerMusicClip);
     }
 
     private void PlayBackgroundMusic(AudioClip clip)

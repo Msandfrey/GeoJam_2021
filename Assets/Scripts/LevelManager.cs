@@ -76,6 +76,8 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         HUDCont.SetBallCount(ballCount);
+
+        Debug.Log("Starting level: " + sceneManager.GetCurrentLevel());
     }
 
     // Update is called once per frame
@@ -113,6 +115,8 @@ public class LevelManager : MonoBehaviour
         timerActive = false;
         //object stuff
         sceneManager = FindObjectOfType<SceneChangeManager>();
+
+        levelNumber = sceneManager.GetCurrentLevel();
 
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.PlayPeggleLevelMusic(levelNumber);
