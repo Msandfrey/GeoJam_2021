@@ -7,6 +7,7 @@ public class MainMenuController : MonoBehaviour
 {
     public Slider volumeSlider;
     public AudioManager audioManager;
+    public Toggle SetDropBallOnBreakoutToggle;
 
     private PlayerSettings playerSettings;
     private SceneChangeManager sceneChangeManager;
@@ -25,8 +26,15 @@ public class MainMenuController : MonoBehaviour
         volumeSlider.value = volume;
         volumeSlider.onValueChanged.AddListener(HandleVolumeSliderValueChanged);
 
+        SetDropBallOnBreakoutToggle.onValueChanged.AddListener(HandleBreakoutNoBall);
+
         audioManager.SetVolume(volume);
         audioManager.PlayMainMenuMusic();
+    }
+
+    private void HandleBreakoutNoBall(bool dropBall)
+    {
+        playerSettings.SaveBallDropBool(dropBall);
     }
 
     private void HandleVolumeSliderValueChanged(float value)
