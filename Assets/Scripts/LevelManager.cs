@@ -253,7 +253,7 @@ public class LevelManager : MonoBehaviour
             return;
         }
         bool isPeggleShowing = unoReverseCard ? !peg : peg;
-        if(activeBalls.Count <= 0 && !isPeggleShowing && switchToPeggleOnNoBalls)
+        if(activeBalls.Count <= 0 && !isPeggleShowing)
         {
             //if (switchToPeggleOnNoBalls)
             //{
