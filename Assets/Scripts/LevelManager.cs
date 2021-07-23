@@ -7,6 +7,9 @@ public class LevelManager : MonoBehaviour
     int score;
     float timer;
     [SerializeField]
+    float gainBallScoreValue = 100f;
+    float scoreUntilBall;
+    [SerializeField]
     int ballCount = 5;
     int blocksLeft;
     [SerializeField]
@@ -113,7 +116,7 @@ public class LevelManager : MonoBehaviour
 
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.PlayPeggleLevelMusic(levelNumber);
-
+        scoreUntilBall = gainBallScoreValue;
     }
     public void PlayerSwitch()
     {
@@ -270,8 +273,20 @@ public class LevelManager : MonoBehaviour
         //calculate score based on block type, later with combo shtuff
         score += blockPoints*bonusMultiplier;
         HUDCont.SetScore(score);
+        scoreUntilBall -= blockPoints * bonusMultiplier;
+        CheckToAddNewBall();
     }
-
+    void CheckToAddNewBall()
+    {
+        //check if scoreuntilball is 0
+        if(scoreUntilBall <= 0)
+        {
+            ballCount++;
+            HUDCont.SetBallCount(ballCount);
+            scoreUntilBall += gainBallScoreValue;
+            CheckToAddNewBall();
+        }
+    }
     int CalcHitBonus(int hitStreak)
     {
         if (hitStreak <= hitStreakThresholdLow)
