@@ -48,6 +48,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     AudioClip switchToPeggleModeAudioClip;
     [SerializeField]
+    AudioClip winLevelAudioClip;
+    [SerializeField]
+    AudioClip loseLevelAudioClip;
+    [SerializeField]
     OwlController owl;
     [SerializeField]
     float timeThreshold;
@@ -320,6 +324,8 @@ public class LevelManager : MonoBehaviour
         //show win screen
         HUDCont.ShowLevelCompletedScreen(true);
         win = true;
+        audioManager.StopAllMusic();
+        audioManager.PlayAudioClip(winLevelAudioClip);
         //show options after win
         //main menu?
         //continue?
@@ -333,6 +339,8 @@ public class LevelManager : MonoBehaviour
     {
         //show lose screen
         HUDCont.ShowLevelCompletedScreen(false);
+        audioManager.StopAllMusic();
+        audioManager.PlayAudioClip(loseLevelAudioClip);
         //show options after losing
         //restart?
         //main menu?

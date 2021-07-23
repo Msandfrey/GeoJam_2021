@@ -41,11 +41,16 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopAllMusic()
+    {
+        musicAudioSource.Stop();
+    }
+
     public void PlayAudioClip(AudioClip clip)
     {
         if (clip == null)
         {
-            Debug.Log("AudioClip not set. Skipping audio.");
+            Debug.Log("AudioClip not supplied. Skipping audio.");
         }
         else
         {
