@@ -14,11 +14,17 @@ public class BallController : MonoBehaviour
     public float thrust = 20f;
     //public bool ballIsActive = false;
 
+    public AudioClip shootAudioClip;
+    private AudioManager audioManager;
+
     void Start()
     {
         //Matt-------------------------
         levelManager = FindObjectOfType<LevelManager>();
         //Matt-------------------------
+
+        audioManager = FindObjectOfType<AudioManager>();
+
     }
 
     void Update()
@@ -49,6 +55,11 @@ public class BallController : MonoBehaviour
 
             rbBall.GetComponent<Rigidbody>().AddForce(direction * thrust, ForceMode.Impulse);
             levelManager.AddActiveBall(createBall);
+        }
+
+        if (audioManager != null && shootAudioClip != null)
+        {
+            audioManager.PlayAudioClip(shootAudioClip);
         }
     }
 }
