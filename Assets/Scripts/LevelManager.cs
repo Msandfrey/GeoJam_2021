@@ -186,7 +186,7 @@ public class LevelManager : MonoBehaviour
             //slow down time
             Time.timeScale = slowTimeOnSwitch ? .1f : 1f;
             //show owl
-            tempOwlThing.SetActive(true);
+            //tempOwlThing.SetActive(true);
             //coroutine for increase size and wait x secs
             StartCoroutine(InitiateSwitchToTheOtherSide());
             Launcher.gameObject.SetActive(false);
@@ -208,7 +208,7 @@ public class LevelManager : MonoBehaviour
         //give players a couple moments to realize the mode is changing
         yield return new WaitForSeconds(switchLagTime);
         Time.timeScale = 1;
-        tempOwlThing.SetActive(false);
+        //tempOwlThing.SetActive(false);
     }
     public void RemoveBlock(int points)//take in block type/points value
     {
