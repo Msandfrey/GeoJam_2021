@@ -116,6 +116,8 @@ public class LevelManager : MonoBehaviour
         //object stuff
         sceneManager = FindObjectOfType<SceneChangeManager>();
 
+        levelNumber = sceneManager.GetCurrentLevel();
+
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.PlayPeggleLevelMusic(levelNumber);
         scoreUntilBall = gainBallScoreValue;
