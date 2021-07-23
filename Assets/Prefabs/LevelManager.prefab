@@ -293,7 +293,7 @@ MonoBehaviour:
   peg: 1
   unoReverseCard: 0
   slowTimeOnSwitch: 0
-  switchToPeggleOnNoBalls: 0
+  switchToPeggleOnNoBalls: 1
   switchLagTime: 0.2
   ballDropSpeed: 10
   BreakoutSpawnPoint: {fileID: 0}
