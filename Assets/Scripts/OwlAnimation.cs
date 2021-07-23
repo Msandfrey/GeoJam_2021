@@ -14,18 +14,25 @@ public class OwlAnimation : MonoBehaviour
     OwlController owl;
     [SerializeField]
     float flapSpeed = 1f;
+    [SerializeField] GameObject OwlIdle;
+    [SerializeField] GameObject OwlBody;
+    [SerializeField] GameObject OwlHead;
     
-
-    // Start is called before the first frame update
     void Start()
     {
         //anim.StopPlayback();
+        OwlIdle.gameObject.SetActive(true);
+        OwlBody.gameObject.SetActive(false);
+        OwlHead.gameObject.SetActive(false);
         owlspeed = wingAnim.speed;
         owlspeed = 0;
         wingAnim.speed = 0;
     }
     public void StartFlying()
     {
+        OwlIdle.gameObject.SetActive(false);
+        OwlBody.gameObject.SetActive(true);
+        OwlHead.gameObject.SetActive(true);
         wingAnim.StopPlayback();
         wingAnim.speed = 1;
         owlspeed = 1;
@@ -33,9 +40,11 @@ public class OwlAnimation : MonoBehaviour
     }
     public void StopFlying()
     {
+        OwlIdle.gameObject.SetActive(true);
+        OwlBody.gameObject.SetActive(false);
+        OwlHead.gameObject.SetActive(false);
         wingAnim.StopPlayback();
         wingAnim.speed = 0;
         owlspeed = 0;
-        wingAnim.Play("OwlIdle");
     }
 }
