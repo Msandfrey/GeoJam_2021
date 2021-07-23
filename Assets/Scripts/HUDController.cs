@@ -22,6 +22,9 @@ public class HUDController : MonoBehaviour
     public GameObject levelSelectPanel;
     public TMP_Dropdown levelDropDown;
 
+    [Header("Level Text Settings")]
+    public TextMeshProUGUI levelText;
+
     private SceneChangeManager sceneChangeManager;
 
     // Used for level select menu screen to easily jump between levels
@@ -43,6 +46,7 @@ public class HUDController : MonoBehaviour
 
     private void Start()
     {
+        levelText.text = "Level " + sceneChangeManager.GetCurrentLevel();
         InitLevelDropdownList();
     }
 
