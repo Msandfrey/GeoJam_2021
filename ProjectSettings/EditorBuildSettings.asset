@@ -24,15 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Thomas 4.unity
     guid: 03695dceab3185248b10352c5f056f15
   - enabled: 1
-    path: Assets/Scenes/Matt.unity
-    guid: c7e095586891395439b5dabb608b86d9
-  - enabled: 1
-    path: Assets/Scenes/Matt 1.unity
-    guid: e5c936ef17e427e40af672554bb73eaa
-  - enabled: 1
-    path: Assets/Scenes/Matt 2.unity
-    guid: 5842507e7d3089a4c808a5da5a08565b
-  - enabled: 1
     path: Assets/Scenes/Nate 2.unity
     guid: 080776c3e4a0d8844a629569ccd69812
   - enabled: 1
