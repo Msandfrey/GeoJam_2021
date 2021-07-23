@@ -748,7 +748,7 @@ PrefabInstance:
     - target: {fileID: 3108038687066857918, guid: 11d2c2c619380274e89c8ff997283c2b, type: 3}
       propertyPath: OwlIdle
       value: 
-      objectReference: {fileID: 1284517925}
+      objectReference: {fileID: 929904667}
     - target: {fileID: 3108038687066857919, guid: 11d2c2c619380274e89c8ff997283c2b, type: 3}
       propertyPath: m_Name
       value: Owl
@@ -758,11 +758,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3108038687280825154, guid: 11d2c2c619380274e89c8ff997283c2b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3108038687280825154, guid: 11d2c2c619380274e89c8ff997283c2b, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3108038687577594725, guid: 11d2c2c619380274e89c8ff997283c2b, type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204120457114640657, guid: 11d2c2c619380274e89c8ff997283c2b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6886308749006005979, guid: 11d2c2c619380274e89c8ff997283c2b, type: 3}
@@ -1390,6 +1398,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891b3640d05b14a4699f6c15ce291cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &929904667 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6886308749006005983, guid: 11d2c2c619380274e89c8ff997283c2b, type: 3}
+  m_PrefabInstance: {fileID: 626229202}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &947679163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1355255358070736602, guid: 29918c0cd300ef549ad0229d0051ec1b, type: 3}
@@ -1727,11 +1740,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29918c0cd300ef549ad0229d0051ec1b, type: 3}
---- !u!1 &1284517925 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6886308749006005983, guid: 11d2c2c619380274e89c8ff997283c2b, type: 3}
-  m_PrefabInstance: {fileID: 626229202}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1320125416
 GameObject:
   m_ObjectHideFlags: 0
