@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44693863, g: 0.49202043, b: 0.5491989, a: 1}
+  m_IndirectSpecularColor: {r: 0.44693846, g: 0.49202007, b: 0.5491985, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1691,6 +1691,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialBallSpeed: 0
   ballAngleOffset: 0
+--- !u!1001 &1028390860
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2966932418464199740, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_Name
+      value: BreakoutSpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+--- !u!4 &1028390861 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2966932418464199741, guid: 400ad1adfbebba745a41e8cc81e1d141, type: 3}
+  m_PrefabInstance: {fileID: 1028390860}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1044875844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3150,7 +3212,7 @@ MonoBehaviour:
   switchToPeggleOnNoBalls: 1
   switchLagTime: 0.2
   ballDropSpeed: 10
-  BreakoutSpawnPoint: {fileID: 0}
+  BreakoutSpawnPoint: {fileID: 1028390861}
   Launcher: {fileID: 3637409114274144085}
   breakoutBar: {fileID: 7354795599266767399}
   HUDCont: {fileID: 898366742}
@@ -3164,7 +3226,7 @@ MonoBehaviour:
   hitStreakMultiplier2: 2
   hitStreakMultiplier3: 10
   hitStreak: 0
-  prefabBall: {fileID: 0}
+  prefabBall: {fileID: 3290766299175084929, guid: b1393992c70a93d438be057ab87ff4b6, type: 3}
   tempOwlThing: {fileID: 2041541742462339460}
 --- !u!4 &1738966964
 Transform:
@@ -3719,6 +3781,7 @@ MonoBehaviour:
   owlWingAnimator: {fileID: 0}
   owlHeadAnimator: {fileID: 0}
   speed: 7
+  quickReturnSpeed: 10
   minWaitTime: 5
   maxWaitTime: 10
   moveAudioClip: {fileID: 0}

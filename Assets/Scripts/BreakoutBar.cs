@@ -15,8 +15,11 @@ public class BreakoutBar : MonoBehaviour
 
     void Update()
     {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(mousePos.x, transform.position.y, 0);
+        if(Time.timeScale != 0)
+        {
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            transform.position = new Vector3(mousePos.x, transform.position.y, 0);
+        }
     }
 
     private void OnCollisionEnter(Collision col)
