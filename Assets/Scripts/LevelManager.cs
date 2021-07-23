@@ -81,8 +81,7 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerSettings playerSettings = FindObjectOfType<PlayerSettings>();
-        switchToPeggleOnNoBalls = playerSettings.GetBallDropValue();
+        switchToPeggleOnNoBalls = true;
         HUDCont.SetBallCount(ballCount);
 
         Debug.Log("Starting level: " + sceneManager.GetCurrentLevel());
