@@ -287,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364a8499cc3d40345b4cadba00708eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gainBallScoreValue: 1000
   ballCount: 5
   gravity: -9.8
   peg: 1
