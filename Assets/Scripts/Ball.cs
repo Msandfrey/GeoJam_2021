@@ -17,6 +17,7 @@ public class Ball : MonoBehaviour
     public bool GottaSwitchModes;
     public bool DoesBallSwitchOnCollision = true;
     bool GravityOn = true;
+    float currentY;
 
     private void Start()
     {
@@ -30,7 +31,7 @@ public class Ball : MonoBehaviour
             rb.velocity = constantSpeed * (rb.velocity.normalized);
         }
         //if ball isn't moving start timer
-        if ((rb.velocity.y == 0 || rb.velocity == Vector3.zero) && !timerOn)
+        if ((transform.position.y == currentY || rb.velocity == Vector3.zero) && !timerOn)
         {
             //set timer
             timerOn = true;
@@ -39,7 +40,7 @@ public class Ball : MonoBehaviour
         //check timer on each call to see if ball is moving again
         if(timerOn && timer > 0)
         {
-            if((rb.velocity.y == 0 || rb.velocity == Vector3.zero))
+            if((transform.position.y == currentY || rb.velocity == Vector3.zero))
             {
                 timer -= Time.deltaTime;
             }
@@ -49,7 +50,7 @@ public class Ball : MonoBehaviour
             }
         }else if(timerOn && timer <= 0)
         {
-            if((rb.velocity.y == 0 || rb.velocity == Vector3.zero))
+            if((transform.position.y == currentY || rb.velocity == Vector3.zero))
             {
                 levelManager.BallFalls(gameObject);
             }
@@ -109,5 +110,6 @@ public class Ball : MonoBehaviour
             rb.useGravity = GravityOn;
             GottaSwitchModes = false;
         }
+        currentY = transform.position.y;
     }
 }
