@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -17,7 +18,14 @@ public class HUDController : MonoBehaviour
     [Header("Menu Components")]
     public GameObject menuPanel;
 
+    [Header("Level Select Menu Settings")]
+    public GameObject levelSelectPanel;
+    public TMP_Dropdown levelDropDown;
+
     private SceneChangeManager sceneChangeManager;
+
+    // Used for level select menu screen to easily jump between levels
+    private Dictionary<string, int> levelToBuildIndex; 
 
     private bool won;
 
@@ -27,21 +35,54 @@ public class HUDController : MonoBehaviour
 
         levelOverPanel.SetActive(false);
         menuPanel.SetActive(false);
+        levelSelectPanel.SetActive(false);
 
         SetScore(0);
         SetBallCount(0);
     }
 
+    private void Start()
+    {
+        InitLevelDropdownList();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (levelSelectPanel.activeSelf)
+            {
+                CloseLevelSelectScreen();
+            }
+            else
+            {
+                OpenLevelSelectScreen();
+            }
+        }
+    }
+
     public void OpenMenuScreen()
     {
-        Time.timeScale = 0;
+        PauseGame();
         menuPanel.SetActive(true);
     }
 
     public void CloseMenuScreen()
     {
         menuPanel.SetActive(false);
-        Time.timeScale = 1;
+        ResumeGame();
+    }
+
+    public void OpenLevelSelectScreen()
+    {
+        PauseGame();
+        levelSelectPanel.SetActive(true);
+    }
+
+    public void CloseLevelSelectScreen()
+    {
+        levelSelectPanel.SetActive(false);
+        ResumeGame();
     }
 
     public void LoadNextScene()
@@ -66,6 +107,14 @@ public class HUDController : MonoBehaviour
         sceneChangeManager.SwitchScene(SceneChangeManager.MAIN_MENU_SCENE);
     }
 
+    public void LoadSelectedLevel()
+    {
+        string selectedLevel = levelDropDown.options[levelDropDown.value].text;
+        int sceneIndex = levelToBuildIndex[selectedLevel];
+
+        sceneChangeManager.LoadSceneByIndex(sceneIndex);
+    }
+
     public void SetScore(int score)
     {
         scoreText.text = score + "";
@@ -73,7 +122,8 @@ public class HUDController : MonoBehaviour
 
     public void ShowLevelCompletedScreen(bool won)
     {
-        Time.timeScale = 0;
+        PauseGame();
+
         this.won = won;
 
         if (won)
@@ -100,8 +150,34 @@ public class HUDController : MonoBehaviour
         ballCountText.text = ballCount + "";
     }
 
+    private void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    private void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
+
     private void LoadNextLevel()
     {
         sceneChangeManager.SwitchScene();
+    }
+
+    private void InitLevelDropdownList()
+    {
+        levelToBuildIndex = sceneChangeManager.GetLevelsInBuild();
+
+        levelDropDown.options.Clear();
+
+        foreach (KeyValuePair<string, int> entry in levelToBuildIndex)
+        {
+            TMP_Dropdown.OptionData option = new TMP_Dropdown.OptionData();
+            option.text = entry.Key;
+
+            levelDropDown.options.Add(option);
+        }
+
     }
 }

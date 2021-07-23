@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4143757872607447298}
   - component: {fileID: 2190265222213549512}
   - component: {fileID: 5911641838259090797}
+  - component: {fileID: -8610400157669259800}
   m_Layer: 0
   m_Name: Launcher
   m_TagString: Untagged
@@ -98,6 +99,20 @@ MonoBehaviour:
   prefabBall: {fileID: 3290766299175084929, guid: b1393992c70a93d438be057ab87ff4b6, type: 3}
   shootingPoint: {fileID: 1821424658791659649}
   thrust: 20
+--- !u!136 &-8610400157669259800
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388891684710226973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.5989208
+  m_Height: 4.3258266
+  m_Direction: 1
+  m_Center: {x: 0.010969162, y: -0.020955563, z: -0}
 --- !u!1 &6705255914466181673
 GameObject:
   m_ObjectHideFlags: 0
