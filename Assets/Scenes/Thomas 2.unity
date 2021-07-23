@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44693846, g: 0.49202007, b: 0.5491985, a: 1}
+  m_IndirectSpecularColor: {r: 0.44693863, g: 0.49202043, b: 0.5491989, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2196,10 +2196,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3108038687066857912, guid: 11d2c2c619380274e89c8ff997283c2b, type: 3}
-      propertyPath: speed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3108038687066857912, guid: 11d2c2c619380274e89c8ff997283c2b, type: 3}
       propertyPath: maxWaitTime
       value: 10
       objectReference: {fileID: 0}
@@ -3161,9 +3157,12 @@ MonoBehaviour:
   levelNumber: 1
   switchModeAudioClip: {fileID: 8300000, guid: efded59807fd44f1380d467519892780, type: 3}
   owl: {fileID: 1330342381}
-  hitStreakMultiplier1: 10
+  timeThreshold: 5
+  hitStreakThresholdLow: 5
+  hitStreakThresholdMid: 10
+  hitStreakMultiplier1: 1
   hitStreakMultiplier2: 2
-  hitStreakMultiplier3: 1
+  hitStreakMultiplier3: 10
   hitStreak: 0
   prefabBall: {fileID: 0}
   tempOwlThing: {fileID: 2041541742462339460}

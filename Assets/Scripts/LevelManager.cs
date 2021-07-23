@@ -44,12 +44,12 @@ public class LevelManager : MonoBehaviour
     AudioClip switchModeAudioClip;
     [SerializeField]
     OwlController owl;
-    // [SerializeField]
-    // float hitStreakTimeThreshold1;
-    // [SerializeField]
-    // float hitStreakTimeThreshold2;
-    // [SerializeField]
-    // float hitStreakTimeThreshold3;
+    [SerializeField]
+    float timeThreshold;
+    [SerializeField]
+    int hitStreakThresholdLow;
+    [SerializeField]
+    int hitStreakThresholdMid;
     [SerializeField]
     int hitStreakMultiplier1 = 1;
     [SerializeField]
@@ -80,7 +80,7 @@ public class LevelManager : MonoBehaviour
         if(timerActive)
         {
             timer += Time.deltaTime;
-            if (timer >= 8.0f)
+            if (timer >= timeThreshold)
             {
 
                 Debug.Log("TIMER RESET");
@@ -274,11 +274,11 @@ public class LevelManager : MonoBehaviour
 
     int CalcHitBonus(int hitStreak)
     {
-        if (hitStreak <= 2)
+        if (hitStreak <= hitStreakThresholdLow)
         {
             return hitStreakMultiplier1;
         }
-        else if (hitStreak <= 6)
+        else if (hitStreak <= hitStreakThresholdMid)
         {
             return hitStreakMultiplier2;
         }

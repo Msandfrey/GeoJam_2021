@@ -302,9 +302,12 @@ MonoBehaviour:
   levelNumber: 1
   switchModeAudioClip: {fileID: 8300000, guid: efded59807fd44f1380d467519892780, type: 3}
   owl: {fileID: 0}
+  timeThreshold: 5
+  hitStreakThresholdLow: 5
+  hitStreakThresholdMid: 10
   hitStreakMultiplier1: 1
-  hitStreakMultiplier2: 3
-  hitStreakMultiplier3: 5
+  hitStreakMultiplier2: 2
+  hitStreakMultiplier3: 10
   hitStreak: 0
   prefabBall: {fileID: 3290766299175084929, guid: b1393992c70a93d438be057ab87ff4b6, type: 3}
   tempOwlThing: {fileID: 0}
