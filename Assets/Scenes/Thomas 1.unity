@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44693863, g: 0.49202043, b: 0.5491989, a: 1}
+  m_IndirectSpecularColor: {r: 0.44693846, g: 0.49202007, b: 0.5491985, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3111,7 +3111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 364a8499cc3d40345b4cadba00708eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballCount: 3
+  ballCount: 5
   gravity: -9.8
   peg: 1
   unoReverseCard: 0
@@ -3124,14 +3124,12 @@ MonoBehaviour:
   breakoutBar: {fileID: 7354795599266767399}
   HUDCont: {fileID: 898366742}
   levelNumber: 1
-  switchModeAudioClip: {fileID: 0}
+  switchModeAudioClip: {fileID: 8300000, guid: efded59807fd44f1380d467519892780, type: 3}
   owl: {fileID: 1330342381}
-  hitStreakTimeThreshold1: 1
-  hitStreakTimeThreshold2: 5
-  hitStreakTimeThreshold3: 999
   hitStreakMultiplier1: 10
   hitStreakMultiplier2: 2
   hitStreakMultiplier3: 1
+  hitStreak: 0
   prefabBall: {fileID: 0}
   tempOwlThing: {fileID: 2041541742462339460}
 --- !u!4 &1738966964
