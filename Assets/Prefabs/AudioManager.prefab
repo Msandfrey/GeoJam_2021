@@ -51,9 +51,11 @@ MonoBehaviour:
   levelPeggleMusicClips:
   - {fileID: 8300000, guid: 9ebebcda7d8a8a642b22b8c8ff65f8ee, type: 3}
   - {fileID: 8300000, guid: 958ce08a0b36a684bad6a1f32b349abe, type: 3}
+  - {fileID: 8300000, guid: 5d4944e9017b1004fb40bee7f3498e82, type: 3}
   levelBrickBreakerMusicClips:
   - {fileID: 8300000, guid: 0f994d25d4e063c4aabd08804596c6e2, type: 3}
   - {fileID: 8300000, guid: 55ebd79567aee1a44b779bed6c899607, type: 3}
+  - {fileID: 8300000, guid: 9ab0e246ae514a94a88ec23719ca8bb3, type: 3}
 --- !u!82 &4089205918210729787
 AudioSource:
   m_ObjectHideFlags: 0
