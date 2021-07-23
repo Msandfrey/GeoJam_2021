@@ -30,7 +30,7 @@ public class Ball : MonoBehaviour
             rb.velocity = constantSpeed * (rb.velocity.normalized);
         }
         //if ball isn't moving start timer
-        if(rb.velocity == Vector3.zero && !timerOn)
+        if ((rb.velocity.y == 0 || rb.velocity == Vector3.zero) && !timerOn)
         {
             //set timer
             timerOn = true;
@@ -39,7 +39,7 @@ public class Ball : MonoBehaviour
         //check timer on each call to see if ball is moving again
         if(timerOn && timer > 0)
         {
-            if(rb.velocity == Vector3.zero)
+            if((rb.velocity.y == 0 || rb.velocity == Vector3.zero))
             {
                 timer -= Time.deltaTime;
             }
@@ -49,7 +49,7 @@ public class Ball : MonoBehaviour
             }
         }else if(timerOn && timer <= 0)
         {
-            if(rb.velocity == Vector3.zero)
+            if((rb.velocity.y == 0 || rb.velocity == Vector3.zero))
             {
                 levelManager.BallFalls(gameObject);
             }
