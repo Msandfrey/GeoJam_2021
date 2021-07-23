@@ -302,6 +302,7 @@ MonoBehaviour:
   HUDCont: {fileID: 0}
   levelNumber: 1
   switchModeAudioClip: {fileID: 8300000, guid: efded59807fd44f1380d467519892780, type: 3}
+  switchToPeggleModeAudioClip: {fileID: 8300000, guid: e6b4aefd5b2f86048a056aa990b0d14f, type: 3}
   owl: {fileID: 0}
   timeThreshold: 5
   hitStreakThresholdLow: 5

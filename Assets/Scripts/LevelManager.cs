@@ -46,6 +46,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     AudioClip switchModeAudioClip;
     [SerializeField]
+    AudioClip switchToPeggleModeAudioClip;
+    [SerializeField]
     OwlController owl;
     [SerializeField]
     float timeThreshold;
@@ -172,6 +174,7 @@ public class LevelManager : MonoBehaviour
                 }
             }
             audioManager.PlayPeggleLevelMusic(levelNumber);
+            audioManager.PlayAudioClip(switchToPeggleModeAudioClip);
         }
         else//else hide launcher show bar
         {
@@ -192,9 +195,8 @@ public class LevelManager : MonoBehaviour
                 }
             }
             audioManager.PlayBrickBreakerLevelMusic(levelNumber);
+            audioManager.PlayAudioClip(switchModeAudioClip);
         }
-        audioManager.PlayAudioClip(switchModeAudioClip);
-
     }
     public IEnumerator InitiateSwitchToTheOtherSide()
     {
